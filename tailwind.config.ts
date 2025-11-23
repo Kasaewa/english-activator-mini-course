@@ -47,6 +47,18 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        warm: {
+          50: "hsl(38 90% 97%)",
+          100: "hsl(38 85% 92%)",
+          200: "hsl(38 80% 85%)",
+          300: "hsl(35 75% 75%)",
+          400: "hsl(32 70% 65%)",
+          500: "hsl(28 85% 55%)",
+          600: "hsl(25 80% 48%)",
+          700: "hsl(22 75% 40%)",
+          800: "hsl(20 70% 32%)",
+          900: "hsl(18 65% 25%)",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -80,10 +92,28 @@ export default {
             height: "0",
           },
         },
+        "fade-in": {
+          from: {
+            opacity: "0",
+            transform: "translateY(20px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in": "fade-in 0.6s ease-out forwards",
+      },
+      backgroundImage: {
+        "gradient-hero": "var(--gradient-hero)",
+        "gradient-accent": "var(--gradient-accent)",
+      },
+      boxShadow: {
+        warm: "var(--shadow-warm)",
       },
     },
   },

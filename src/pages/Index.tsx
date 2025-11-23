@@ -86,7 +86,7 @@ const Index = () => {
               <Card className="border-2 border-destructive/20 hover:border-destructive/40 transition-all">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4">
-                    <X className="w-8 h-8 text-destructive shrink-0 mt-1" />
+                    
                     <p className="text-lg leading-relaxed">{siteTexts.problem.issues[0]}</p>
                   </div>
                 </CardContent>

@@ -13,7 +13,7 @@ export const siteTexts = {
   problem: {
     title: "Czy to brzmi znajomo?",
     issues: [
-      "Wiele moich kursantek mówiło mi, że niby uczyły się angielskiego, ale w praktyce… nie używają go wcale. A potem widzą oferty pracy, gdzie angielski to must have — i od razu czują dreszcze. „A co jeśli zapytają mnie o coś banalnego, a ja się zatnę?” A ten stres nie kończy się na kwestii pracy. W podróży wolą, żeby odezwał się partner czy koleżanka. W restauracji udają, że nie słyszą. W głowie pojawia się czarna dziura, a one same zalewają się wstydem, bo „powinny umieć — przecież tyle lat się uczyły”.'."
+      "Wiele moich kursantek mówiło mi, że niby uczyły się angielskiego, ale w praktyce… nie używają go wcale. A potem widzą oferty pracy, gdzie angielski to must have — i od razu czują dreszcze. „A co jeśli zapytają mnie o coś banalnego, a ja się zatnę?” A ten stres nie kończy się na kwestii pracy. W podróży wolą, żeby odezwał się partner czy koleżanka. W restauracji udają, że nie słyszą. W głowie pojawia się czarna dziura, a one same zalewają się wstydem, bo „powinny umieć — przecież tyle lat się uczyły”."
     ],
     solution: {
       calm: "Z Tobą jest wszystko w porządku!",

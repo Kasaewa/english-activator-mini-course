@@ -17,11 +17,135 @@ import {
   Sparkles, 
   Heart,
   Star,
-  Gift
+  Gift,
+  ChevronLeft,
+  ChevronRight
 } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
 import nataliaPortrait from "@/assets/natalia-portrait.jpg";
+import history1 from "@/assets/history1.png";
+import opinia1 from "@/assets/opinia1.png";
+import opinia2 from "@/assets/opinia2.png";
+import opinia3 from "@/assets/opinia3.png";
+import opinia4 from "@/assets/opinia4.png";
+import casestudy1 from "@/assets/casestudy1.png";
+import casestudy2 from "@/assets/casestudy2.png";
 import { siteTexts } from "@/content/texts";
+import { useState, useEffect } from "react";
+
+// Komponent karuzeli dla testimoniali
+const TestimonialCarousel = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  
+  // Mapowanie obrazów
+  const testimonialImages = [opinia1, opinia2, opinia3, opinia4];
+  
+  const testimonials = siteTexts.testimonialScreens.testimonials.map((testimonial, index) => ({
+    ...testimonial,
+    image: testimonialImages[index]
+  }));
+
+  // Automatyczne przewijanie co 5 sekund
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => 
+        prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
+
+  const goToPrevious = () => {
+    setCurrentIndex(currentIndex === 0 ? testimonials.length - 1 : currentIndex - 1);
+  };
+
+  const goToNext = () => {
+    setCurrentIndex(currentIndex === testimonials.length - 1 ? 0 : currentIndex + 1);
+  };
+
+  const currentTestimonial = testimonials[currentIndex];
+
+  return (
+    <section className="py-20 bg-card">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
+            {siteTexts.testimonialScreens.title}
+          </h2>
+          <p className="text-xl text-muted-foreground text-center mb-12">
+            ({siteTexts.testimonialScreens.subtitle})
+          </p>
+          
+          {/* Karuzela */}
+          <div className="relative">
+            <Card className="overflow-hidden">
+              <CardContent className="p-8">
+                <div className="relative flex items-center justify-center">
+                  {/* Przyciski nawigacji */}
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="absolute left-4 z-10 bg-background/80 backdrop-blur-sm hover:bg-background/90"
+                    onClick={goToPrevious}
+                  >
+                    <ChevronLeft className="h-4 w-4" />
+                  </Button>
+                  
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="absolute right-4 z-10 bg-background/80 backdrop-blur-sm hover:bg-background/90"
+                    onClick={goToNext}
+                  >
+                    <ChevronRight className="h-4 w-4" />
+                  </Button>
+
+                  {/* Kontener obrazu - responsywny dla różnych orientacji */}
+                  <div className={`relative mx-auto ${
+                    currentTestimonial.orientation === 'vertical' 
+                      ? 'w-full max-w-sm' 
+                      : 'w-full max-w-2xl'
+                  }`}>
+                    <img
+                      src={currentTestimonial.image}
+                      alt={currentTestimonial.alt}
+                      className={`rounded-lg shadow-warm w-full ${
+                        currentTestimonial.orientation === 'vertical'
+                          ? 'max-h-[600px] object-contain'
+                          : 'max-h-[500px] object-contain'
+                      }`}
+                    />
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            
+            {/* Wskaźniki */}
+            <div className="flex justify-center gap-2 mt-6">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`w-3 h-3 rounded-full transition-all ${
+                    index === currentIndex 
+                      ? 'bg-primary' 
+                      : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
+                  }`}
+                />
+              ))}
+            </div>
+            
+            {/* Licznik */}
+            <p className="text-center text-muted-foreground mt-4">
+              {currentIndex + 1} z {testimonials.length}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 const Index = () => {
   const scrollToPrice = () => {
@@ -30,9 +154,9 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
+      {/* Hero + Problem Section */}
       <section 
-        className="relative min-h-[90vh] flex items-center justify-center overflow-hidden"
+        className="relative min-h-[100vh] flex items-center justify-center overflow-hidden"
         style={{
           backgroundImage: `linear-gradient(135deg, rgba(252, 243, 224, 0.95) 0%, rgba(252, 231, 203, 0.9) 100%), url(${heroBackground})`,
           backgroundSize: 'cover',
@@ -40,12 +164,8 @@ const Index = () => {
         }}
       >
         <div className="container mx-auto px-4 py-20 relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
-            <div className="inline-flex items-center gap-2 bg-card/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-warm">
-              <Sun className="w-6 h-6 text-primary" />
-              <span className="font-semibold text-primary">{siteTexts.hero.badge}</span>
-            </div>
-            
+          {/* Hero Content */}
+          <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in mb-12">
             <h1 className="text-5xl md:text-7xl font-bold leading-tight">
               {siteTexts.hero.title.main}{" "}
               <span className="text-primary">{siteTexts.hero.title.accent}</span>
@@ -66,34 +186,21 @@ const Index = () => {
                 <Sparkles className="ml-2 group-hover:animate-pulse" />
               </Button>
             </div>
-            
-            <p className="text-sm text-muted-foreground pt-4">
-              {siteTexts.hero.guarantee}
-            </p>
           </div>
-        </div>
-      </section>
 
-      {/* Problem Section */}
-      <section className="py-20 bg-card">
-        <div className="container mx-auto px-4">
+          {/* Problem Content */}
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
-              {siteTexts.problem.title}
-            </h2>
-            
-            <div className="grid md:grid-cols-1 gap-6 mb-12">
-              <Card className="border-2 border-destructive/20 hover:border-destructive/40 transition-all">
+            <div className="grid md:grid-cols-1 gap-6 mb-8">
+              <Card className="border-2 border-destructive/20 hover:border-destructive/40 transition-all bg-card/80 backdrop-blur-sm">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4">
-                    
                     <p className="text-lg leading-relaxed">{siteTexts.problem.issues[0]}</p>
                   </div>
                 </CardContent>
               </Card>
             </div>
             
-            <div className="bg-secondary/50 rounded-2xl p-8 text-center">
+            <div className="bg-secondary/50 backdrop-blur-sm rounded-2xl p-8 text-center">
               <p className="text-xl leading-relaxed">
                 {siteTexts.problem.solution.textStart} <span className="font-semibold text-primary">{siteTexts.problem.solution.calm}</span>. 
                 {siteTexts.problem.solution.textMiddle} <span className="font-semibold">{siteTexts.problem.solution.emphasis}</span>
@@ -107,7 +214,6 @@ const Index = () => {
       <section className="py-20 bg-gradient-hero">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center space-y-8">
-            <Sun className="w-20 h-20 text-primary mx-auto" />
             <h2 className="text-4xl md:text-5xl font-bold">
               {siteTexts.solution.title}
             </h2>
@@ -164,13 +270,13 @@ const Index = () => {
               ))}
             </div>
 
-            <div className="bg-gradient-accent text-accent-foreground rounded-2xl p-8 text-center">
-              <h3 className="text-2xl font-bold mb-4">{siteTexts.benefits.urgency.title}</h3>
-              <p className="text-lg mb-4">
-                ✅ {siteTexts.benefits.urgency.positive}
+            {/* Personal reflection section */}
+            <div className="bg-card rounded-2xl p-8 mb-12">
+              <p className="text-lg leading-relaxed mb-6">
+                {siteTexts.benefits.personalReflection.firstParagraph}
               </p>
-              <p className="text-lg">
-                ⚠️ {siteTexts.benefits.urgency.negative}
+              <p className="text-lg leading-relaxed">
+                {siteTexts.benefits.personalReflection.secondParagraph}
               </p>
             </div>
           </div>
@@ -178,34 +284,7 @@ const Index = () => {
       </section>
 
       {/* Testimonial Screens Section */}
-      <section className="py-20 bg-card">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
-              {siteTexts.testimonialScreens.title}
-            </h2>
-            <p className="text-xl text-muted-foreground text-center mb-12">
-              ({siteTexts.testimonialScreens.subtitle})
-            </p>
-            
-            <div className="grid md:grid-cols-3 gap-8">
-              {siteTexts.testimonialScreens.placeholders.map((placeholder) => (
-                <Card key={placeholder.id} className="hover:shadow-warm transition-all">
-                  <CardContent className="p-8 space-y-4">
-                    <div className="aspect-[4/3] bg-muted rounded-lg flex items-center justify-center">
-                      <div className="text-center text-muted-foreground">
-                        <Star className="w-12 h-12 mx-auto mb-2" />
-                        <p className="font-medium">{placeholder.description}</p>
-                        <p className="text-sm mt-1">#{placeholder.id}</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <TestimonialCarousel />
 
       {/* Why Created Section */}
       <section className="py-20 bg-background">
@@ -239,7 +318,7 @@ const Index = () => {
                 <img 
                   src={nataliaPortrait} 
                   alt={siteTexts.author.imageAlt} 
-                  className="rounded-2xl shadow-warm w-full"
+                  className="rounded-full shadow-warm w-full aspect-square object-cover"
                 />
               </div>
               
@@ -272,13 +351,29 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Personal story */}
-            <div className="bg-gradient-hero rounded-2xl p-8">
-              <h3 className="text-2xl font-bold mb-6">{siteTexts.author.personalStory.title}</h3>
-              <div className="space-y-4 text-lg">
-                <p className="leading-relaxed">{siteTexts.author.personalStory.intro}</p>
-                <p className="leading-relaxed">{siteTexts.author.personalStory.struggle}</p>
-                <p className="leading-relaxed font-semibold text-primary">{siteTexts.author.personalStory.breakthrough}</p>
+            {/* Why Important Section */}
+            <div className="bg-gradient-hero rounded-2xl p-8 space-y-8">              
+              <div>
+                <h4 className="text-xl font-bold mb-4">{siteTexts.author.personalStory.whyImportant.title}</h4>
+                <p className="text-lg leading-relaxed mb-6">{siteTexts.author.personalStory.whyImportant.problem}</p>
+                
+                {/* Image */}
+                <div className="my-6">
+                  <img
+                    src={history1}
+                    alt={siteTexts.author.personalStory.whyImportant.imageAlt}
+                    className="rounded-lg shadow-warm w-full object-cover"
+                  />
+                </div>
+                
+                <p className="text-lg leading-relaxed font-medium text-primary">{siteTexts.author.personalStory.whyImportant.solution}</p>
+              </div>
+              
+              {/* Atmosphere Section */}
+              <div className="bg-card/50 rounded-xl p-6">
+                <h4 className="text-xl font-bold mb-4">{siteTexts.author.personalStory.atmosphere.title}</h4>
+                <p className="text-lg leading-relaxed mb-4">{siteTexts.author.personalStory.atmosphere.description}</p>
+                <p className="text-lg font-semibold text-primary">{siteTexts.author.personalStory.atmosphere.invitation}</p>
               </div>
             </div>
           </div>
@@ -324,58 +419,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Case Study Section */}
-      <section className="py-20 bg-secondary/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
-              {siteTexts.caseStudy.title}
-            </h2>
-            
-            <div className="space-y-8">
-              <Card className="bg-card">
-                <CardContent className="p-8">
-                  <p className="text-lg leading-relaxed mb-6">{siteTexts.caseStudy.intro}</p>
-                  <p className="text-lg leading-relaxed text-destructive font-medium">{siteTexts.caseStudy.problem}</p>
-                </CardContent>
-              </Card>
-
-              {/* Testimonial placeholder BEFORE */}
-              <Card className="border-2 border-primary bg-primary/5">
-                <CardContent className="p-8">
-                  <div className="aspect-[16/9] bg-muted rounded-lg flex items-center justify-center">
-                    <div className="text-center text-muted-foreground">
-                      <Star className="w-16 h-16 mx-auto mb-4" />
-                      <p className="font-medium text-lg">{siteTexts.caseStudy.testimonialPlaceholder.before}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-card">
-                <CardContent className="p-8">
-                  <p className="text-lg leading-relaxed mb-6">{siteTexts.caseStudy.solution}</p>
-                  <p className="text-lg leading-relaxed text-primary font-semibold">{siteTexts.caseStudy.result}</p>
-                </CardContent>
-              </Card>
-
-              {/* Testimonial placeholder AFTER */}
-              <Card className="border-2 border-primary bg-primary/5">
-                <CardContent className="p-8">
-                  <div className="aspect-[16/9] bg-muted rounded-lg flex items-center justify-center">
-                    <div className="text-center text-muted-foreground">
-                      <Star className="w-16 h-16 mx-auto mb-4" />
-                      <p className="font-medium text-lg">{siteTexts.caseStudy.testimonialPlaceholder.after}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Bonuses Section */}
+{/* Bonuses Section */}
       <section className="py-20 bg-card">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -387,24 +431,6 @@ const Index = () => {
             </div>
             
             <div className="space-y-6">
-              <Card className="border-2 border-primary bg-primary/5">
-                <CardContent className="p-8">
-                  <div className="flex items-start gap-6">
-                    <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center shrink-0">
-                      <Star className="w-8 h-8 text-primary-foreground" />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold mb-2 text-primary">
-                        {siteTexts.bonuses.specialBonus.title}
-                      </h3>
-                      <p className="text-lg">
-                        <span className="font-semibold">{siteTexts.bonuses.specialBonus.roomName}</span> {siteTexts.bonuses.specialBonus.roomDescription}
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-              
               {siteTexts.bonuses.regularBonuses.map((bonus, index) => (
                 <Card key={index}>
                   <CardContent className="p-6 flex items-start gap-4">
@@ -460,11 +486,98 @@ const Index = () => {
                 </div>
               </div>
             </div>
+            
+            {/* Summary for A0 level */}
+            <div className="mt-12 bg-gradient-hero rounded-xl p-6 text-center">
+              <p className="text-lg leading-relaxed">
+                {siteTexts.targetAudience.summary}
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Pricing Section */}
+      {/* Personal Story Section */}
+      <section className="py-20 bg-card">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+        
+            
+            <div className="space-y-6">
+              {siteTexts.personalStory.content.map((paragraph, index) => (
+                <div key={index} className="bg-secondary/20 rounded-xl p-6">
+                  <p 
+                    className="text-lg leading-relaxed"
+                    dangerouslySetInnerHTML={{
+                      __html: paragraph.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Case Study Section */}
+      <section className="py-20 bg-secondary/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
+              {siteTexts.caseStudy.title}
+            </h2>
+            
+            <div className="space-y-8">
+              <Card className="bg-card">
+                <CardContent className="p-8">
+                  <p className="text-lg leading-relaxed mb-6">{siteTexts.caseStudy.intro}</p>
+                  <p className="text-lg leading-relaxed text-destructive font-medium">{siteTexts.caseStudy.problem}</p>
+                </CardContent>
+              </Card>
+
+              {/* Image BEFORE */}
+              <Card className="border-2 border-primary bg-primary/5">
+                <CardContent className="p-8">
+                  <img
+                    src={casestudy1}
+                    alt="Ania przed kursem - opinia o trudnościach w nauce angielskiego"
+                    className="rounded-lg shadow-warm w-full max-w-2xl mx-auto object-contain"
+                  />
+                </CardContent>
+              </Card>
+
+              <Card className="bg-card">
+                <CardContent className="p-8">
+                  <p className="text-lg leading-relaxed mb-6">{siteTexts.caseStudy.solution}</p>
+                </CardContent>
+              </Card>
+
+              {/* Image AFTER */}
+              <Card className="border-2 border-primary bg-primary/5">
+                <CardContent className="p-8">
+                  <img
+                    src={casestudy2}
+                    alt="Ania po kursie - opinia o sukcesie i awansie w pracy"
+                    className="rounded-lg shadow-warm w-full max-w-2xl mx-auto object-contain"
+                  />
+                </CardContent>
+              </Card>
+
+              <Card className="bg-card">
+                <CardContent className="p-8">
+                  <p className="text-lg leading-relaxed text-primary font-semibold">{siteTexts.caseStudy.result}</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+
+      
+
+      {/* Pricing Section - Part 1 */}
       <section id="pricing" className="py-20 bg-gradient-accent text-accent-foreground">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -488,21 +601,29 @@ const Index = () => {
                     </div>
                   ))}
                 </div>
+
+                {/* Bonuses Section */}
+                <div className="space-y-4 border-t border-accent-foreground/20 pt-6">
+                  <h3 className="text-2xl font-bold text-card-foreground">{siteTexts.pricing.bonuses.title}</h3>
+                  {siteTexts.pricing.bonuses.items.map((item, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <Gift className="w-6 h-6 text-primary shrink-0 mt-1" />
+                      <p className="text-lg text-card-foreground">{item}</p>
+                    </div>
+                  ))}
+                </div>
                 
                 <div className="bg-primary/10 rounded-xl p-6 text-center">
-                  <p className="text-2xl font-bold text-card-foreground mb-2">
-                    {siteTexts.pricing.value.valueText} <span className="line-through text-muted-foreground">{siteTexts.pricing.value.original}</span>
-                  </p>
-                  <p className="text-4xl font-bold text-primary">{siteTexts.pricing.value.priceText} {siteTexts.pricing.value.current}</p>
+                  <p className="text-4xl font-bold text-primary mb-4">CENA: {siteTexts.pricing.price}</p>
                 </div>
                 
                 <Button 
                   variant="default" 
                   size="xl" 
-                  className="w-full text-xl h-16 bg-card text-card-foreground hover:bg-card/90 shadow-warm"
+                  className="w-full text-xl h-16 bg-primary text-primary-foreground hover:bg-primary/90 shadow-warm hover:shadow-xl transform hover:scale-105 transition-all duration-300 font-bold"
                   onClick={scrollToPrice}
                 >
-                  {siteTexts.pricing.cta}
+                  🎯 {siteTexts.pricing.cta}
                 </Button>
                 
                 <p className="text-center text-sm text-card-foreground/70">
@@ -538,28 +659,42 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <section className="py-20 bg-primary text-primary-foreground">
+      {/* Pricing Section - Part 2 */}
+      <section className="py-20 bg-gradient-accent text-accent-foreground">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center space-y-8">
-            <Sun className="w-20 h-20 mx-auto" />
-            <h2 className="text-4xl md:text-5xl font-bold">
-              {siteTexts.finalCta.title}
-            </h2>
-            <p className="text-xl opacity-90 max-w-2xl mx-auto">
-              {siteTexts.finalCta.subtitle}
-            </p>
-            <Button 
-              variant="default" 
-              size="xl" 
-              className="bg-accent text-accent-foreground hover:bg-accent/90 font-bold text-xl"
-              onClick={scrollToPrice}
-            >
-              {siteTexts.finalCta.button}
-            </Button>
+          <div className="max-w-4xl mx-auto">
+            <Card className="border-4 border-accent-foreground/20">
+              <CardContent className="p-10 space-y-6">
+                <h3 className="text-xl font-bold text-card-foreground text-center mb-6">
+                  {siteTexts.pricing.targetProblems.title}
+                </h3>
+                <div className="space-y-4">
+                  {siteTexts.pricing.targetProblems.items.map((item, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <Check className="w-6 h-6 text-primary shrink-0 mt-1" />
+                      <p className="text-lg text-card-foreground">{item}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="bg-primary/10 rounded-xl p-6 text-center mt-8">
+                  <p className="text-4xl font-bold text-primary mb-4">CENA: {siteTexts.pricing.price}</p>
+                </div>
+                
+                <Button 
+                  variant="default" 
+                  size="xl" 
+                  className="w-full text-xl h-16 bg-primary text-primary-foreground hover:bg-primary/90 shadow-warm hover:shadow-xl transform hover:scale-105 transition-all duration-300 font-bold"
+                  onClick={scrollToPrice}
+                >
+                  🎯 {siteTexts.pricing.cta}
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
+
 
       {/* Footer */}
       <footer className="bg-card border-t py-12">

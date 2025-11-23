@@ -39,6 +39,10 @@ export const siteTexts = {
       "Dowiesz się, jak sprawić, by j. angielski był integralną częścią Twojej codzienności w przyjemny sposób.",
       "Jako skutek uboczny możesz pokochać naukę angielskiego i używanie go na co dzień!"
     ],
+    personalReflection: {
+      firstParagraph: "Gdybym tylko 10 lat temu wiedziała o tym, co przygotowałam dla Ciebie, uniknęłabym chronicznego stresu i ciągłego wstydu podczas mojego kilkuletniego życia w Anglii oraz zmarnowanego czasu i pieniędzy na nieefektywne kursy. A przecież ciągłe życie w stresie i wstydzie może prowadzić do wielu negatywnych konsekwencji fizycznych i psychicznych.",
+      secondParagraph: "Im szybciej wdrożysz moje wskazówki, tym szybciej otworzysz się na swobodne korzystanie z j. angielskiego, a Twoja blokada przestanie się pogłębiać. Im dłużej będziesz odkładała naukę na potem, tym bardziej będzie wzrastać Twoja bariera w mówieniu i niechęć do angielskiego, a stres i lęk będą się pogłębiać – co będzie czyniło dalszą naukę jeszcze trudniejszą oraz prowadziło do innych negatywnych konsekwencji zdrowotnych."
+    },
     urgency: {
       title: "Pamiętaj:",
       positive: "Im szybciej wdrożysz moje wskazówki, tym szybciej otworzysz się na swobodne korzystanie z j. angielskiego, a Twoja blokada przestanie się pogłębiać.",
@@ -48,22 +52,31 @@ export const siteTexts = {
 
   testimonialScreens: {
     title: "Co mówią moje kursantki?",
-    subtitle: "Więcej publicznych opini znajdziesz na moim fanpage",
-    placeholders: [
+    subtitle: "Więcej publicznych opinii znajdziesz na moim fanpage",
+    testimonials: [
       {
         id: 1,
+        image: "/src/assets/opinia1.png",
         alt: "Opinia kursantki 1",
-        description: "Screen z opinią kursantki"
+        orientation: "horizontal"
       },
       {
         id: 2, 
+        image: "/src/assets/opinia2.png",
         alt: "Opinia kursantki 2",
-        description: "Screen z opinią kursantki"
+        orientation: "horizontal"
       },
       {
         id: 3,
+        image: "/src/assets/opinia3.png",
         alt: "Opinia kursantki 3", 
-        description: "Screen z opinią kursantki"
+        orientation: "horizontal"
+      },
+      {
+        id: 4,
+        image: "/src/assets/opinia4.png",
+        alt: "Opinia kursantki 4",
+        orientation: "vertical"
       }
     ]
   },
@@ -131,25 +144,19 @@ export const siteTexts = {
   },
  
   bonuses: {
-    title: "Bonusy wartościowe jak cały kurs",
-    specialBonus: {
-      title: "🎁 BONUS dla pierwszych 20 osób",
-      description: "Talk & Chill Room – dostęp na 30 dni do naszej społeczności, gdzie ćwiczysz mówienie w bezpiecznej atmosferze",
-      roomName: "Talk & Chill Room",
-      roomDescription: "– dostęp na 30 dni do naszej społeczności, gdzie ćwiczysz mówienie w bezpiecznej atmosferze"
-    },
+    title: "Dodatkowe bonusy:",
     regularBonuses: [
       {
-        title: "E-book z planem treningowym",
-        description: "Gotowy plan na 30 dni – wystarczy, że będziesz go realizować"
+        title: "E-book do samodzielnej nauki języka z planem treningowym",
+        description: "Kompletny przewodnik z gotowym planem treningowym do samodzielnej nauki"
       },
       {
-        title: "Checklista z aktywatorami",
-        description: "Wszystkie praktyki w jednym miejscu do codziennego wykorzystania"
+        title: "Checklistę z Twoimi ulubionymi aktywatorami na każdy tydzień",
+        description: "Praktyczna lista kontrolna z aktywatorami do codziennego użytku"
       },
       {
-        title: "Zestaw afirmacji (audio + PDF)",
-        description: "Pozytywne przekonania, które zmienią Twój mindset językowy"
+        title: "Zestaw wspierających afirmacji wspomagających naukę języka PDF/Audio",
+        description: "Pozytywne afirmacje w formacie PDF i audio do wzmacniania motywacji"
       }
     ]
   },
@@ -162,10 +169,8 @@ export const siteTexts = {
     whatMakesSpecial: {
       title: "Co mnie wyróżnia?",
       items: [
-        "Uczę inaczej, bo łączę trzy światy: mentoring, wiedzę akademicką i psychologię.",
-        "Angielski to mój język codzienny od 18. roku życia. Przez ponad 8 lat mieszkałam w Anglii.",
-        "Teraz gdy mieszkam w Hiszpanii nadal używam angielskiego zawodowo i prywatnie.",
-        "To nie jest dla mnie \"język z aplikacji\", tylko realna komunikacja, którą oddycham każdego dnia."
+        "Uczę inaczej, bo łączę trzy światy: mentoring, wiedzę akademicką i psychologię. Dzięki temu pracuję wielowymiarowo — tak, żebyś widziała realny postęp, a nie tylko odklepywała kolejne lekcje.",
+        "Angielski to mój język codzienny od 18. roku życia. Przez ponad 8 lat mieszkałam w Anglii — miejscu w którym narodził się ten język. Teraz gdy mieszkam w Hiszpanii nadal używam angielskiego zawodowo i prywatnie. To nie jest dla mnie \"język z aplikacji\", tylko realna komunikacja, którą oddycham każdego dnia."
       ]
     },
     credentials: [
@@ -180,20 +185,46 @@ export const siteTexts = {
       title: "Moja historia",
       intro: "Ja też wiem, jak to jest, gdy Twoje dłonie zaczynają się pocić ze stresu, czujesz, że Twoja twarz staje się powoli coraz bardziej czerwona, a słowa jakby utkwiły Ci w gardle...",
       struggle: "Przez moje pierwsze miesiące mieszkania w Anglii byłam ciągle zestresowana, lękliwa i nie raz paliłam się ze wstydem. Czułam się beznadziejnie, a moja samoocena poszybowała wtedy mocno w dół.",
-      breakthrough: "Teraz? Czuję się często o wiele bardziej swobodnie w języku angielskim niż w polskim. Ukończyłam studia licencjackie na jednej z lepszych uczelni w UK z pierwszą klasą z wyróżnieniem."
+      breakthrough: "Teraz? Czuję się często o wiele bardziej swobodnie w języku angielskim niż w polskim. Ukończyłam studia licencjackie na jednej z lepszych uczelni w UK z pierwszą klasą z wyróżnieniem.",
+      whyImportant: {
+        title: "Dlaczego to takie ważne?",
+        problem: "Bo wiele moich kursantek mówiło mi, że uczyły się słówek i konstrukcji, których nikt za granicą nie używa — albo nawet nie rozumie. Ten problem pojawia się non stop w grupach dla Polek mieszkających w UK czy USA. Część nauczycieli i twórców kursów nigdy nie mieszkała w kraju anglojęzycznym, więc uczą angielskiego…książkowego. A ten znaczy różni się od żywego, codziennego języka.",
+        image: "/src/assets/history1.png",
+        imageAlt: "Różnice między angielskim książkowym a żywym",
+        imagePlaceholderText: "Placeholder dla history1.png",
+        imagePlaceholderDescription: "Obraz ilustrujący różnice między angielskim książkowym a żywym",
+        solution: "Dlatego tak bardzo dbam o to, by to, czego uczysz się u mnie, było naturalne, aktualne i używane przez ludzi na co dzień — nie tylko w podręcznikach."
+      },
+      atmosphere: {
+        title: "Co więcej?",
+        description: "Moje kursantki mówią często, że mam ,,dar tłumaczenia trudnych rzeczy w prosty sposób\" i że potrafię dać takiego kopa motywacyjnego, że nawet po gorszym dniu wracają do nauki z przyjemnością. Tworzę luźną atmosferę i przestrzeń, w której nie ma wstydu, oceny ani strachu — jest za to wsparcie, proste instrukcje i poczucie, że możesz wszystko.",
+        invitation: "Zapraszam Cie do tej przestrzeni."
+      }
     }
+  },
+
+  personalStory: {
+    title: "Ja też tam byłam...",
+    content: [
+      "Wiesz… **ja też wiem, jak to jest, gdy Twoje dłonie zaczynają się pocić ze stresu**, czujesz, że Twoja twarz staje się powoli coraz bardziej czerwona, a słowa jakby utkwiły Ci w gardle i nie możesz nic sensownego z siebie wykrztusić. Czarna dziura Cie pochłania. A to wszystko na proste słowa typu: \"Excuse me, can you tell me…?\"",
+      "Ja też tam byłam. Przez moje pierwsze miesiące mieszkania w Anglii byłam ciągle zestresowana, lękliwa i nie raz paliłam się ze wstydu. Nie rozumiałam większości tego, co mówili do mnie Anglicy, a nawet jeśli wydawało mi się, że coś tam wiem, to i tak nie byłam w stanie odpowiedzieć im nic sensownego. Czułam się beznadziejnie, a moja samoocena poszybowała wtedy mocno w dół.",
+      "**A przecież uczyłam się angielskiego w szkole wiele lat** i zawsze miałam same piątki z testów. Poczułam się wtedy rozczarowana i sfrustrowana – tyle lat nauki zmarnowane.",
+      "Te 10 lat temu czułam, że każde moje słowo jest oceniane, że cokolwiek powiem – będzie błędne, i że nigdy nie nauczę się tego języka. To było moje zderzenie z rzeczywistością, a to był dopiero początek.",
+      "Wpadłam na pomysł: \"Pójdę na studia, to nauczę się szybciej i coś w końcu osiągnę\". Z początku rozumiałam tylko 20–30% tego, co mówili wykładowcy. Czasem nie miałam kompletnie pojęcia, co się dzieje na zajęciach. Chciałam się poddać i uciec wiele razy. Przepłakiwałam noce, ucząc się podwójnie (angielskiego i wiedzy przedmiotowej), pracując jednocześnie na pełny etat jako kelnerka w restauracji, za minimalne wynagrodzenie, żeby móc się sama utrzymać i wiązać koniec z końcem.",
+      "**Teraz?** Czuję się często o wiele bardziej swobodnie w języku angielskim niż w polskim. Ukończyłam studia licencjackie na jednej z lepszych uczelni w UK i na świecie z pierwszą klasą z wyróżnieniem, przyznawaną najlepszym studentom na roku za ponadprzeciętne wyniki. Potem ukończyłam pedagogikę (5 stopnia), która pozwalała mi nauczać w szkołach wyższych. Po drodze ukończyłam jeszcze psychologię, coaching i wiele innych kursów. Prawda jest taka, że od tamtej pory codziennie się rozwijam i uczę czegoś nowego, bo po prostu uwielbiam to robić.",
+      "Gdy zaczęłam sama uczyć w szkołach, zrozumiałam, że posiadanie wiedzy to nie wszystko – ważniejsze jest to, jak ją przekazujemy (my, nauczyciele). Po ponad ośmiu latach przeprowadziłam się finalnie z Anglii do mojej słonecznej Hiszpanii, co było jednym z moich największych marzeń jeszcze z okresu dzieciństwa.",
+      "Od paru lat uczę angielskiego i wspieram wszystkie osoby, które – tak jak ja kiedyś – czują się dziś zestresowane, zlęknione czy rozczarowane. Wiem, jakie błędy JA popełniłam – i dzięki temu uczę się teraz innych języków efektywniej oraz pragnę dzielić się tym z innymi. Chciałabym, żebyście mogli spełniać siebie i swoje marzenia tak jak ja to teraz robię – dzięki angielskiemu, który kocham i który daje nam nieograniczone możliwości!"
+    ]
   },
 
   caseStudy: {
     title: "Poznaj historię mojej kursantki Ani",
-    intro: "Ania była osobą, która w szkole nie miała angielskiego wcale — tylko rosyjski, który ledwo zaliczyła dzięki litości nauczycielki. Ale Ania bardzo chciała zdobyć dobrą pracę w Anglii.",
-    problem: "Blokada tylko się pogłębiała. Strach przed mówieniem był tak duży, że nawet zwykłe \"hello\" w sklepie wywoływało panikę. Była przekonana, że jest \"beztalenciem\", że już się nie nauczy.",
-    solution: "Kiedy zgłosiła się do mnie, od razu wiedziałam, że musimy pracować nie tylko nad językiem, ale przede wszystkim nad poczuciem własnej wartości, motywacją i pewnością siebie.",
-    result: "Ania — mieszkając już w Anglii — dostała awans na andona, czyli operatora wspierającego swój zespół, w którym byli Anglicy i inni obcokrajowcy.",
-    testimonialPlaceholder: {
-      before: "Placeholder na opinię Ani - PRZED",
-      after: "Placeholder na opinię Ani - PO"
-    }
+    intro: "Ania była osobą, która w szkole nie miała angielskiego wcale — tylko rosyjski, który ledwo zaliczała dzięki litości nauczycielki. Ale Ania bardzo chciała zdobyć dobrą pracę w Anglii, więc próbowała uczyć się angielskiego na różne sposoby i z różnymi lektorami czyli aplikacjami typu Doulingo. Ale nic nie działało. Była wkurzona i załamana.",
+    problem: "Blokada tylko się pogłębiała. Strach przed mówieniem był tak duży, że nawet zwykłe „hello” w sklepie wywoływało panikę. Na korepetycjach czuła, że słowa wpadają jednym uchem, a drugim wypadają. Po zajęciach nie pamiętała praktycznie nic, a co dopiero mówić o używaniu języka w życiu. Była przekonana, że jest „beztanentem”, że już się nie nauczy, bo nie ma talentu do języka.",
+    solution: "Kiedy zgłosiła się do mnie, od razu wiedziałam, że musimy pracować nie tylko nad językiem, ale przede wszystkim nad poczuciem własnej wartości, motywacją i pewnością siebie. Dopiero wtedy mogła zacząć się naprawdę otwierać na angielski i wprowadzić go EFEKTYWNIE do swojej rutyny. I w końcu stało się to, na co tak czekała…",
+    result: "Ania — mieszkając już w Anglii — dostała awans na andona, czyli operatora wspierającego swój zespół, w którym byli Anglicy i inni obcokrajowcy. Byłam z niej niesamowicie dumna… a ona z siebie jeszcze bardziej.",
+    beforeImage: "casestudy1",
+    afterImage: "casestudy2"
   },
  
   testimonials: {
@@ -216,25 +247,32 @@ export const siteTexts = {
   },
  
   targetAudience: {
-    title: "Dla kogo jest ten program?",
+    title: "Dla kogo to jest?",
     forWho: {
-      title: "Dla kogo?",
+      title: "Dla kogo to jest?",
       items: [
-        "Uczysz się lub uczyłaś angielskiego, ale w praktyce nie mówisz",
-        "Chcesz prostej rutyny bez godzin studiowania",
-        "Potrzebujesz pewności siebie w mówieniu",
-        "Wracasz do angielskiego po przerwie",
-        "Szukasz metody, która łączy naukę z przyjemnością"
+        "Dla osób, które nie mają kontaktu z angielskim na co dzień i chcą to wreszcie zmienić.",
+        "Dla tych, którzy mimo wcześniejszej nauki nadal czują blokadę, stres lub wstyd przed mówieniem.",
+        "Idealny, jeśli chcesz wprowadzić angielski do codziennej rutyny w sposób prosty i szybki.",
+        "Dla osób, które czują, że stoją w miejscu i nie są w stanie przeskoczyć na poziom wyżej.",
+        "To jest dla Ciebie jeśli przez angielski boisz się aplikować na lepszą pracę, omija Cię awans lub podwyżka, uciekasz od okazji do mówienia.",
+        "Świetny wybór, jeśli brak swobody ogranicza Cię w podróżach i poznawaniu ludzi.",
+        "Dla tych, których bliscy często wyręczają w rozmowach po angielsku — a Wy macie tego dość.",
+        "Dla osób, które potrzebują dodatkowej motywacji lub \"kopa\", żeby ruszyć z miejsca.",
+        "Dla wszystkich, którzy chcą mówić mimo strachu przed błędami.",
+        "Choć zazwyczaj mówię w formie żeńskiej — proces jest dla kobiet i mężczyzn.",
+        "Aktywatory są idealne dla dorosłych na poziomie od A1 do C1."
       ]
     },
+    summary: "Osoby na A0 też mogą z nich skorzystać — sama robiłam podobne rzeczy, kiedy uczyłam się hiszpańskiego od totalnego zera. Ale mówiąc wprost: na A0 będzie Ci trudniej. Nadal jest to możliwe, tylko potrzebujesz więcej czasu i wsparcia. Dlatego jeśli startujesz od absolutnego zera, lepszym początkiem będą zajęcia 1:1, a Aktywatory potraktuj jako późniejszy dodatek.",
     notForWho: {
-      title: "Dla kogo NIE?",
+      title: "Dla kogo to NIE jest?",
       items: [
-        "Dzieci poniżej 16 roku życia",
-        "Osoby na poziomie C2 / Native speakers",
-        "Osoby szukające kursu gramatycznego",
-        "Osoby, które nie będą robić ćwiczeń",
-        "Osoby oczekujące magicznej formuły bez pracy"
+        "Aktywatory nie są najlepszym wyborem dla dzieci poniżej 16 roku życia. Proces jest stworzony typowo dla dorosłych — opiera się na samodzielnej praktyce, świadomej ekspozycji i narzędziach, które lepiej sprawdzają się u osób dorosłych. Dzieci uczą się inaczej i potrzebują bardziej zabawowych, interaktywnych metod.",
+        "Dla tych, którzy są na poziomie C2 i czują pełną swobodę, pewność i płynność w mówieniu. Ten zestaw jest dla osób, które właśnie tej swobody dopiero szukają.",
+        "Dla osób, które już mają codzienną, naturalną ekspozycję na angielski (np. używają go w pracy, mieszkają w kraju anglojęzycznym, mają anglojęzycznego partnera, studiują po angielsku). Jeśli Twój mózg już codziennie chłonie język, to nie potrzebujesz aktywatorów, tylko bardziej zaawansowanych narzędzi.",
+        "Dla osób, które nie chcą ćwiczyć. Jeśli liczysz, że samo obejrzenie nagrania \"magicznie\" poprawi Twój angielski — nie, to tak nie działa. Aktywatory są proste, szybkie i łatwe, ale wymagają Twojego minimalnego działania.",
+        "Dla osób, które chcą listę 10 000 słówek i 50 zasad gramatycznych. Tego tu nie znajdziesz — i dobrze, bo taka nauka nie jest efektywna i tylko blokuje mówienie."
       ]
     }
   },
@@ -245,13 +283,29 @@ export const siteTexts = {
     subtitle: "Zamiast płacić tysiące za długie kursy – zainwestuj w metodę, która działa",
     packageTitle: "Co dostajesz w pakiecie?",
     packageItems: [
-      "6 filmów VOD z aktywatorami (łącznie ~95 minut)",
-      "Dostęp na 3 lata do wszystkich materiałów",
-      "E-book z 30-dniowym planem treningowym",
-      "Checklista aktywatorów do wydruku",
-      "Zestaw afirmacji (audio + PDF)",
-      "BONUS: Talk & Chill Room na 30 dni (dla pierwszych 20 osób)"
+      "Dostęp do AKTYWATORÓW w formie 6 nagrań VOD na platformie kursowej od razu po zakupie"
     ],
+    bonuses: {
+      title: "BONUSY:",
+      items: [
+        "Dla pierwszych 20 osób: Dostęp do \"Talk & Chill Room\" - miejsca do luźnych, lekkich rozmów po angielsku z innymi kursantami",
+        "E-book do samodzielnej nauki angielskiego z planem treningowym, który zorganizuje Twoją naukę na kolejne miesiące lub lata",
+        "Checklistę z Twoimi ulubionymi aktywatorami do śledzenia postępów - na każdy tydzień",
+        "Zestaw wspierających afirmacji wspomagających naukę angielskiego w formie PDF/Audio"
+      ]
+    },
+    targetProblems: {
+      title: "Jeśli choć jedna z tych rzeczy Cię dotyczy, to moje Aktywatory są zdecydowanie dla Ciebie i już czas się tym zająć:",
+      items: [
+        "jeśli teraz czujesz, że brakuje Ci codziennego kontaktu z angielskim",
+        "rozmowy Cię stresują i nie jesteś w stanie używać angielskiego ze swobodą czy pewnością siebie",
+        "szkolne metody nauki czy aplikacje na telefon Ci nie pomagają",
+        "nie masz czasu lub pieniędzy na długie, skomplikowane i drogie kursy językowe",
+        "brakuje Ci motywacji, aby ruszyć z nauką angielskiego",
+        "masz poczucie, że Twój angielski stoi w miejscu i nie możesz wejść poziom wyżej",
+        "czujesz się zagubiona w ilości kursów, aplikacji, metod i ćwiczeń - potrzebujesz jasnych instrukcji"
+      ]
+    },
     value: {
       original: "397 PLN",
       current: "47 PLN",
@@ -263,31 +317,35 @@ export const siteTexts = {
   },
  
   faq: {
-    title: "Najczęściej zadawane pytania",
+    title: "FAQ – najczęściej pojawiające się pytania",
     questions: [
       {
-        question: "Jak długo mam dostęp do kursu?",
-        answer: "Masz dostęp przez pełne 3 lata od momentu zakupu. To wystarczająco dużo czasu, żeby wrócić do materiałów wielokrotnie i utrwalić nawyki."
+        question: "Co się dzieje po zakupie?",
+        answer: "Po zakupie otrzymujesz maila z dostępem do zalogowania się na platformie kursowej."
+      },
+      {
+        question: "Gdzie otrzymam informacje?",
+        answer: "Wszystkie informacje dostaniesz na maila podanego podczas zakupu."
+      },
+      {
+        question: "Jak się zalogować?",
+        answer: "Instrukcja logowania znajduje się w Twoim mailu."
+      },
+      {
+        question: "Jak długo mam dostęp?",
+        answer: "Dostęp do platformy oraz aktualizacji masz przez 3 lata – aby zmobilizować Cię do działania."
+      },
+      {
+        question: "Kto przetwarza moje dane?",
+        answer: "Firma SUN Mentoring Natalia Chas, zarejestrowana w Londynie (UK), przetwarza Twoje dane."
       },
       {
         question: "Czy dostanę fakturę?",
-        answer: "Tak! Faktura jest generowana automatycznie po dokonaniu płatności. Otrzymasz ją na podany adres email."
+        answer: "Tak, otrzymasz fakturę na maila od razu po zakupie."
       },
       {
-        question: "Dla jakiego poziomu jest ten kurs?",
-        answer: "Kurs jest idealny dla poziomów A1 do C1. Jeśli zaczynasz od zera (A0), również możesz skorzystać, ale niektóre praktyki będą wymagały więcej czasu i cierpliwości."
-      },
-      {
-        question: "Ile czasu dziennie muszę poświęcić?",
-        answer: "Aktywatory są zaprojektowane tak, żeby zajmowały 5-15 minut dziennie. Możesz robić więcej, jeśli chcesz, ale nawet regularne 10 minut dziennie da Ci zauważalne efekty."
-      },
-      {
-        question: "Co jeśli nie będzie mi to pasować?",
-        answer: "Jeśli w ciągu pierwszych 14 dni stwierdzisz, że program nie jest dla Ciebie, skontaktuj się ze mną, a zwrócę Ci pieniądze. Bez pytań."
-      },
-      {
-        question: "Czy to zastąpi mi kurs angielskiego?",
-        answer: "Aktywatory to nie jest pełny kurs gramatyczny. To zestaw praktyk, które uzupełniają naukę i pomagają wyjść z pętli \"wiem, ale nie używam\". Jeśli potrzebujesz systematycznej nauki od podstaw, polecam połączenie aktywatorów z kursem lub zajęciami indywidualnymi."
+        question: "Czy potrzebuję jakichś narzędzi do działania?",
+        answer: "Potrzebujesz aktywnego adresu e-mail, żeby dostać dostęp do platformy, oraz chęci do działania."
       }
     ]
   },

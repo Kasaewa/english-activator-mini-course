@@ -48,7 +48,8 @@ const Index = () => {
             
             <h1 className="text-5xl md:text-7xl font-bold leading-tight">
               {siteTexts.hero.title.main}{" "}
-              <span className="text-primary">{siteTexts.hero.title.accent}</span>
+              <span className="text-primary">{siteTexts.hero.title.accent}</span>{" "}
+              {siteTexts.hero.title.end}
             </h1>
             
             <p className="text-2xl md:text-3xl text-muted-foreground max-w-3xl mx-auto">
@@ -82,21 +83,21 @@ const Index = () => {
               {siteTexts.problem.title}
             </h2>
             
-            <div className="grid md:grid-cols-1 gap-6 mb-12">
-              <Card className="border-2 border-destructive/20 hover:border-destructive/40 transition-all">
-                <CardContent className="p-8">
-                  <div className="flex items-start gap-4">
-                    <X className="w-8 h-8 text-destructive shrink-0 mt-1" />
-                    <p className="text-lg leading-relaxed">{siteTexts.problem.issues[0]}</p>
-                  </div>
-                </CardContent>
-              </Card>
+            <div className="grid md:grid-cols-2 gap-6 mb-12">
+              {siteTexts.problem.issues.map((problem, index) => (
+                <Card key={index} className="border-2 border-destructive/20 hover:border-destructive/40 transition-all">
+                  <CardContent className="p-6 flex items-start gap-4">
+                    <X className="w-6 h-6 text-destructive shrink-0 mt-1" />
+                    <p className="text-lg">{problem}</p>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
             
             <div className="bg-secondary/50 rounded-2xl p-8 text-center">
               <p className="text-xl leading-relaxed">
-                {siteTexts.problem.solution.textStart} <span className="font-semibold text-primary">{siteTexts.problem.solution.calm}</span>. 
-                {siteTexts.problem.solution.textMiddle} <span className="font-semibold">{siteTexts.problem.solution.emphasis}</span>
+                Jeśli czujesz, że to o Tobie – <span className="font-semibold text-primary">{siteTexts.problem.solution.calm}</span>. 
+                To nie brak talentu. <span className="font-semibold">{siteTexts.problem.solution.emphasis}</span>
               </p>
             </div>
           </div>
@@ -112,7 +113,8 @@ const Index = () => {
               {siteTexts.solution.title}
             </h2>
             <p className="text-xl leading-relaxed max-w-3xl mx-auto">
-              {siteTexts.solution.description}
+              Zestaw prostych, szybkich praktyk, które <span className="font-semibold text-primary">aktywują Twój mózg</span>. 
+              Szkoła i podręczniki tego nie dają. To metoda na wyjście z kołowrotka stresu i wstydu.
             </p>
             <div className="grid md:grid-cols-3 gap-6 pt-8">
               <Card className="text-center">
@@ -142,144 +144,6 @@ const Index = () => {
                   <p className="text-muted-foreground">{siteTexts.solution.features.effective.description}</p>
                 </CardContent>
               </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-20 bg-secondary/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
-              {siteTexts.benefits.title}
-            </h2>
-            
-            <div className="grid md:grid-cols-2 gap-6 mb-12">
-              {siteTexts.benefits.items.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3 bg-card p-4 rounded-lg">
-                  <Check className="w-6 h-6 text-primary shrink-0 mt-1" />
-                  <p className="text-lg">{benefit}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="bg-gradient-accent text-accent-foreground rounded-2xl p-8 text-center">
-              <h3 className="text-2xl font-bold mb-4">{siteTexts.benefits.urgency.title}</h3>
-              <p className="text-lg mb-4">
-                ✅ {siteTexts.benefits.urgency.positive}
-              </p>
-              <p className="text-lg">
-                ⚠️ {siteTexts.benefits.urgency.negative}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonial Screens Section */}
-      <section className="py-20 bg-card">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
-              {siteTexts.testimonialScreens.title}
-            </h2>
-            <p className="text-xl text-muted-foreground text-center mb-12">
-              ({siteTexts.testimonialScreens.subtitle})
-            </p>
-            
-            <div className="grid md:grid-cols-3 gap-8">
-              {siteTexts.testimonialScreens.placeholders.map((placeholder) => (
-                <Card key={placeholder.id} className="hover:shadow-warm transition-all">
-                  <CardContent className="p-8 space-y-4">
-                    <div className="aspect-[4/3] bg-muted rounded-lg flex items-center justify-center">
-                      <div className="text-center text-muted-foreground">
-                        <Star className="w-12 h-12 mx-auto mb-2" />
-                        <p className="font-medium">{placeholder.description}</p>
-                        <p className="text-sm mt-1">#{placeholder.id}</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Created Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <h2 className="text-4xl md:text-5xl font-bold">
-              {siteTexts.whyCreated.title}
-            </h2>
-            <p className="text-xl leading-relaxed">
-              {siteTexts.whyCreated.description}
-            </p>
-            <div className="bg-card rounded-2xl p-8">
-              <p className="text-xl leading-relaxed font-medium text-primary">
-                {siteTexts.whyCreated.mission}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About Author Section */}
-      <section className="py-20 bg-card">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-              {siteTexts.author.title}
-            </h2>
-            
-            <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-              <div className="order-2 md:order-1">
-                <img 
-                  src={nataliaPortrait} 
-                  alt={siteTexts.author.imageAlt} 
-                  className="rounded-2xl shadow-warm w-full"
-                />
-              </div>
-              
-              <div className="order-1 md:order-2 space-y-6">
-                <h3 className="text-3xl font-bold text-primary">{siteTexts.author.name}</h3>
-                <p className="text-lg leading-relaxed">
-                  {siteTexts.author.description}
-                </p>
-                <div className="space-y-4">
-                  {siteTexts.author.credentials.map((credential, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <Check className="w-6 h-6 text-primary shrink-0 mt-1" />
-                      <p>{credential}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* What makes special */}
-            <div className="bg-secondary/30 rounded-2xl p-8 mb-12">
-              <h3 className="text-2xl font-bold mb-6 text-primary">{siteTexts.author.whatMakesSpecial.title}</h3>
-              <div className="space-y-4">
-                {siteTexts.author.whatMakesSpecial.items.map((item, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <Star className="w-6 h-6 text-primary shrink-0 mt-1" />
-                    <p className="text-lg">{item}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Personal story */}
-            <div className="bg-gradient-hero rounded-2xl p-8">
-              <h3 className="text-2xl font-bold mb-6">{siteTexts.author.personalStory.title}</h3>
-              <div className="space-y-4 text-lg">
-                <p className="leading-relaxed">{siteTexts.author.personalStory.intro}</p>
-                <p className="leading-relaxed">{siteTexts.author.personalStory.struggle}</p>
-                <p className="leading-relaxed font-semibold text-primary">{siteTexts.author.personalStory.breakthrough}</p>
-              </div>
             </div>
           </div>
         </div>
@@ -324,59 +188,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Case Study Section */}
-      <section className="py-20 bg-secondary/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
-              {siteTexts.caseStudy.title}
-            </h2>
-            
-            <div className="space-y-8">
-              <Card className="bg-card">
-                <CardContent className="p-8">
-                  <p className="text-lg leading-relaxed mb-6">{siteTexts.caseStudy.intro}</p>
-                  <p className="text-lg leading-relaxed text-destructive font-medium">{siteTexts.caseStudy.problem}</p>
-                </CardContent>
-              </Card>
-
-              {/* Testimonial placeholder BEFORE */}
-              <Card className="border-2 border-primary bg-primary/5">
-                <CardContent className="p-8">
-                  <div className="aspect-[16/9] bg-muted rounded-lg flex items-center justify-center">
-                    <div className="text-center text-muted-foreground">
-                      <Star className="w-16 h-16 mx-auto mb-4" />
-                      <p className="font-medium text-lg">{siteTexts.caseStudy.testimonialPlaceholder.before}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-card">
-                <CardContent className="p-8">
-                  <p className="text-lg leading-relaxed mb-6">{siteTexts.caseStudy.solution}</p>
-                  <p className="text-lg leading-relaxed text-primary font-semibold">{siteTexts.caseStudy.result}</p>
-                </CardContent>
-              </Card>
-
-              {/* Testimonial placeholder AFTER */}
-              <Card className="border-2 border-primary bg-primary/5">
-                <CardContent className="p-8">
-                  <div className="aspect-[16/9] bg-muted rounded-lg flex items-center justify-center">
-                    <div className="text-center text-muted-foreground">
-                      <Star className="w-16 h-16 mx-auto mb-4" />
-                      <p className="font-medium text-lg">{siteTexts.caseStudy.testimonialPlaceholder.after}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Bonuses Section */}
-      <section className="py-20 bg-card">
+      <section className="py-20 bg-secondary/30">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -398,7 +211,8 @@ const Index = () => {
                         {siteTexts.bonuses.specialBonus.title}
                       </h3>
                       <p className="text-lg">
-                        <span className="font-semibold">{siteTexts.bonuses.specialBonus.roomName}</span> {siteTexts.bonuses.specialBonus.roomDescription}
+                        <span className="font-semibold">Talk & Chill Room</span> – dostęp na 30 dni 
+                        do naszej społeczności, gdzie ćwiczysz mówienie w bezpiecznej atmosferze
                       </p>
                     </div>
                   </div>
@@ -421,22 +235,119 @@ const Index = () => {
         </div>
       </section>
 
+      {/* About Author Section */}
+      <section className="py-20 bg-card">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
+              Kim jestem i dlaczego możesz mi zaufać?
+            </h2>
+            
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="order-2 md:order-1">
+                <img 
+                  src={nataliaPortrait} 
+                  alt="Natalia Chas - SUN Mentoring School" 
+                  className="rounded-2xl shadow-warm w-full"
+                />
+              </div>
+              
+              <div className="order-1 md:order-2 space-y-6">
+                <h3 className="text-3xl font-bold text-primary">{siteTexts.author.name}</h3>
+                <p className="text-lg leading-relaxed">
+                  {siteTexts.author.description}
+                </p>
+                <div className="space-y-4">
+                  {siteTexts.author.credentials.map((credential, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <Check className="w-6 h-6 text-primary shrink-0 mt-1" />
+                      <p>{credential}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 bg-gradient-hero">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
+              Co mówią moje uczestniczki?
+            </h2>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              <Card className="hover:shadow-warm transition-all">
+                <CardContent className="p-8 space-y-4">
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                    ))}
+                  </div>
+                  <p className="text-lg leading-relaxed">
+                    "Zajęcia indywidualne od pół roku. Wzrost pewności siebie już po kilku godzinach!"
+                  </p>
+                  <p className="font-semibold text-primary">— Malwina</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="hover:shadow-warm transition-all">
+                <CardContent className="p-8 space-y-4">
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                    ))}
+                  </div>
+                  <p className="text-lg leading-relaxed">
+                    "Bariera językowa ze szkoły przełamana w 3 miesiące. To działa!"
+                  </p>
+                  <p className="font-semibold text-primary">— Agata</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="hover:shadow-warm transition-all border-2 border-primary">
+                <CardContent className="p-8 space-y-4">
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                    ))}
+                  </div>
+                  <p className="text-lg leading-relaxed font-semibold">
+                    "Od zera i strachu przed 'hello' do awansu na stanowisko Andona w UK!"
+                  </p>
+                  <p className="font-semibold text-primary">— Ania's Story</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Target Audience Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-              {siteTexts.targetAudience.title}
+              Dla kogo jest ten program?
             </h2>
             
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <h3 className="text-2xl font-bold mb-6 text-primary flex items-center gap-3">
                   <Check className="w-8 h-8" />
-                  {siteTexts.targetAudience.forWho.title}
+                  Dla kogo?
                 </h3>
                 <div className="space-y-4">
-                  {siteTexts.targetAudience.forWho.items.map((item, index) => (
+                  {[
+                    "Uczysz się lub uczyłaś angielskiego, ale w praktyce nie mówisz",
+                    "Chcesz prostej rutyny bez godzin studiowania",
+                    "Potrzebujesz pewności siebie w mówieniu",
+                    "Wracasz do angielskiego po przerwie",
+                    "Szukasz metody, która łączy naukę z przyjemnością"
+                  ].map((item, index) => (
                     <div key={index} className="flex items-start gap-3 bg-card p-4 rounded-lg">
                       <Check className="w-6 h-6 text-primary shrink-0 mt-0.5" />
                       <p>{item}</p>
@@ -448,10 +359,16 @@ const Index = () => {
               <div>
                 <h3 className="text-2xl font-bold mb-6 text-destructive flex items-center gap-3">
                   <X className="w-8 h-8" />
-                  {siteTexts.targetAudience.notForWho.title}
+                  Dla kogo NIE?
                 </h3>
                 <div className="space-y-4">
-                  {siteTexts.targetAudience.notForWho.items.map((item, index) => (
+                  {[
+                    "Dzieci poniżej 16 roku życia",
+                    "Osoby na poziomie C2 / Native speakers",
+                    "Osoby szukające kursu gramatycznego",
+                    "Osoby, które nie będą robić ćwiczeń",
+                    "Osoby oczekujące magicznej formuły bez pracy"
+                  ].map((item, index) => (
                     <div key={index} className="flex items-start gap-3 bg-card p-4 rounded-lg border border-destructive/20">
                       <X className="w-6 h-6 text-destructive shrink-0 mt-0.5" />
                       <p>{item}</p>
@@ -470,18 +387,25 @@ const Index = () => {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-6xl font-bold mb-6">
-                {siteTexts.pricing.title} <span className="text-7xl md:text-8xl">{siteTexts.pricing.price}</span>
+                Zacznij dziś za <span className="text-7xl md:text-8xl">47 PLN</span>
               </h2>
               <p className="text-xl opacity-90">
-                {siteTexts.pricing.subtitle}
+                Zamiast płacić tysiące za długie kursy – zainwestuj w metodę, która działa
               </p>
             </div>
             
             <Card className="border-4 border-accent-foreground/20">
               <CardContent className="p-10 space-y-8">
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-bold text-card-foreground">{siteTexts.pricing.packageTitle}</h3>
-                  {siteTexts.pricing.packageItems.map((item, index) => (
+                  <h3 className="text-2xl font-bold text-card-foreground">Co dostajesz w pakiecie?</h3>
+                  {[
+                    "6 filmów VOD z aktywatorami (łącznie ~95 minut)",
+                    "Dostęp na 3 lata do wszystkich materiałów",
+                    "E-book z 30-dniowym planem treningowym",
+                    "Checklista aktywatorów do wydruku",
+                    "Zestaw afirmacji (audio + PDF)",
+                    "BONUS: Talk & Chill Room na 30 dni (dla pierwszych 20 osób)"
+                  ].map((item, index) => (
                     <div key={index} className="flex items-start gap-3">
                       <Check className="w-6 h-6 text-primary shrink-0 mt-1" />
                       <p className="text-lg text-card-foreground">{item}</p>
@@ -491,9 +415,9 @@ const Index = () => {
                 
                 <div className="bg-primary/10 rounded-xl p-6 text-center">
                   <p className="text-2xl font-bold text-card-foreground mb-2">
-                    {siteTexts.pricing.value.valueText} <span className="line-through text-muted-foreground">{siteTexts.pricing.value.original}</span>
+                    Wartość pakietu: <span className="line-through text-muted-foreground">397 PLN</span>
                   </p>
-                  <p className="text-4xl font-bold text-primary">{siteTexts.pricing.value.priceText} {siteTexts.pricing.value.current}</p>
+                  <p className="text-4xl font-bold text-primary">Twoja cena: 47 PLN</p>
                 </div>
                 
                 <Button 
@@ -502,11 +426,11 @@ const Index = () => {
                   className="w-full text-xl h-16 bg-card text-card-foreground hover:bg-card/90 shadow-warm"
                   onClick={scrollToPrice}
                 >
-                  {siteTexts.pricing.cta}
+                  Dołączam do programu English Activator
                 </Button>
                 
                 <p className="text-center text-sm text-card-foreground/70">
-                  {siteTexts.pricing.guarantee}
+                  💳 Bezpieczna płatność • 🔒 Faktura automatyczna • ⚡ Dostęp natychmiast
                 </p>
               </CardContent>
             </Card>
@@ -519,20 +443,72 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-              {siteTexts.faq.title}
+              Najczęściej zadawane pytania
             </h2>
             
             <Accordion type="single" collapsible className="space-y-4">
-              {siteTexts.faq.questions.map((faq, index) => (
-                <AccordionItem key={index} value={`item-${index + 1}`} className="border rounded-lg px-6">
-                  <AccordionTrigger className="text-lg font-semibold text-left">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground text-base">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
+              <AccordionItem value="item-1" className="border rounded-lg px-6">
+                <AccordionTrigger className="text-lg font-semibold text-left">
+                  Jak długo mam dostęp do kursu?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground text-base">
+                  Masz dostęp przez pełne 3 lata od momentu zakupu. To wystarczająco dużo czasu, 
+                  żeby wrócić do materiałów wielokrotnie i utrwalić nawyki.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-2" className="border rounded-lg px-6">
+                <AccordionTrigger className="text-lg font-semibold text-left">
+                  Czy dostanę fakturę?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground text-base">
+                  Tak! Faktura jest generowana automatycznie po dokonaniu płatności. 
+                  Otrzymasz ją na podany adres email.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-3" className="border rounded-lg px-6">
+                <AccordionTrigger className="text-lg font-semibold text-left">
+                  Dla jakiego poziomu jest ten kurs?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground text-base">
+                  Kurs jest idealny dla poziomów A1 do C1. Jeśli zaczynasz od zera (A0), 
+                  również możesz skorzystać, ale niektóre praktyki będą wymagały więcej czasu i cierpliwości.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-4" className="border rounded-lg px-6">
+                <AccordionTrigger className="text-lg font-semibold text-left">
+                  Ile czasu dziennie muszę poświęcić?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground text-base">
+                  Aktywatory są zaprojektowane tak, żeby zajmowały 5-15 minut dziennie. 
+                  Możesz robić więcej, jeśli chcesz, ale nawet regularne 10 minut dziennie 
+                  da Ci zauważalne efekty.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-5" className="border rounded-lg px-6">
+                <AccordionTrigger className="text-lg font-semibold text-left">
+                  Co jeśli nie będzie mi to pasować?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground text-base">
+                  Jeśli w ciągu pierwszych 14 dni stwierdzisz, że program nie jest dla Ciebie, 
+                  skontaktuj się ze mną, a zwrócę Ci pieniądze. Bez pytań.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-6" className="border rounded-lg px-6">
+                <AccordionTrigger className="text-lg font-semibold text-left">
+                  Czy to zastąpi mi kurs angielskiego?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground text-base">
+                  Aktywatory to nie jest pełny kurs gramatyczny. To zestaw praktyk, które 
+                  uzupełniają naukę i pomagają wyjść z pętli "wiem, ale nie używam". 
+                  Jeśli potrzebujesz systematycznej nauki od podstaw, polecam połączenie 
+                  aktywatorów z kursem lub zajęciami indywidualnymi.
+                </AccordionContent>
+              </AccordionItem>
             </Accordion>
           </div>
         </div>
@@ -544,10 +520,11 @@ const Index = () => {
           <div className="max-w-3xl mx-auto text-center space-y-8">
             <Sun className="w-20 h-20 mx-auto" />
             <h2 className="text-4xl md:text-5xl font-bold">
-              {siteTexts.finalCta.title}
+              Gotowa, żeby aktywować swój angielski?
             </h2>
             <p className="text-xl opacity-90 max-w-2xl mx-auto">
-              {siteTexts.finalCta.subtitle}
+              Dołącz do kobiet, które już przełamały barierę językową i mówią po angielsku 
+              z pewnością siebie. Twoja kolej na zmianę!
             </p>
             <Button 
               variant="default" 
@@ -555,7 +532,7 @@ const Index = () => {
               className="bg-accent text-accent-foreground hover:bg-accent/90 font-bold text-xl"
               onClick={scrollToPrice}
             >
-              {siteTexts.finalCta.button}
+              Zaczynam za 47 PLN
             </Button>
           </div>
         </div>
@@ -568,18 +545,18 @@ const Index = () => {
             <div className="text-center space-y-6">
               <div className="flex items-center justify-center gap-2">
                 <Sun className="w-8 h-8 text-primary" />
-                <span className="text-xl font-bold">{siteTexts.footer.company}</span>
+                <span className="text-xl font-bold">SUN Mentoring School</span>
               </div>
               <p className="text-muted-foreground">
-                {siteTexts.footer.copyright}
+                © 2025 SUN Mentoring Natalia Chas. Wszelkie prawa zastrzeżone.
               </p>
               <div className="flex justify-center gap-6 text-sm">
                 <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  {siteTexts.footer.links.terms}
+                  Regulamin
                 </a>
                 <span className="text-muted-foreground">•</span>
                 <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  {siteTexts.footer.links.privacy}
+                  Polityka Prywatności
                 </a>
               </div>
             </div>

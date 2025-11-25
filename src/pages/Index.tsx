@@ -32,6 +32,7 @@ import casestudy1 from "@/assets/casestudy1.png";
 import casestudy2 from "@/assets/casestudy2.png";
 import { siteTexts } from "@/content/texts";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 // Komponent karuzeli dla testimoniali
 const TestimonialCarousel = () => {
@@ -148,8 +149,14 @@ const TestimonialCarousel = () => {
 };
 
 const Index = () => {
+  const navigate = useNavigate();
+  
   const scrollToPrice = () => {
     document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+  };
+  
+  const goToPayment = () => {
+    navigate('/platnosc');
   };
 
   const scrollToCurriculum = () => {
@@ -714,8 +721,8 @@ const Index = () => {
                 <Button 
                   variant="default" 
                   size="xl" 
-                  className="w-full text-xl h-16 bg-primary text-primary-foreground hover:bg-primary/90 shadow-warm hover:shadow-xl transform hover:scale-105 transition-all duration-300 font-bold"
-                  onClick={scrollToPrice}
+                  className="w-full text-lg md:text-xl h-20 md:h-16 bg-primary text-primary-foreground hover:bg-primary/90 shadow-warm hover:shadow-xl transform hover:scale-105 transition-all duration-300 font-bold leading-tight py-3 px-4 whitespace-normal break-words"
+                  onClick={goToPayment}
                 >
                   🎯 {siteTexts.pricing.cta}
                 </Button>
@@ -756,8 +763,8 @@ const Index = () => {
                 <Button 
                   variant="default" 
                   size="xl" 
-                  className="w-full text-xl h-16 bg-primary text-primary-foreground hover:bg-primary/90 shadow-warm hover:shadow-xl transform hover:scale-105 transition-all duration-300 font-bold"
-                  onClick={scrollToPrice}
+                  className="w-full text-lg md:text-xl h-20 md:h-16 bg-primary text-primary-foreground hover:bg-primary/90 shadow-warm hover:shadow-xl transform hover:scale-105 transition-all duration-300 font-bold leading-tight py-3 px-4 whitespace-normal break-words"
+                  onClick={goToPayment}
                 >
                   🎯 {siteTexts.pricing.cta}
                 </Button>

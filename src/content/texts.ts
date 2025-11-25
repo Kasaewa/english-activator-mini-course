@@ -6,8 +6,13 @@ export const siteTexts = {
       accent: "Activator",
     },
     subtitle: "Skuteczne praktyki, dzięki którym zaczniesz mówić po angielsku bez stresu",
-    cta: "Dołącz od razu",
+    cta: "Dołączam Teraz",
+    ctaSecondary: "Zobacz program",
     guarantee: "💳 Bezpieczna płatność • ⚡ Natychmiastowy dostęp • 🔒 Gwarancja satysfakcji"
+  },
+
+  buttons: {
+    joinNow: "Dołączam Teraz"
   },
  
   problem: {
@@ -145,6 +150,10 @@ export const siteTexts = {
  
   bonuses: {
     title: "Dodatkowe bonusy:",
+    specialBonus: {
+      title: "BONUS dla pierwszych 20 osób: Talk & Chill Room – dostęp na 30 dni",
+      description: "Dostęp do \"Talk & Chill Room\" — miejsca do luźnych, lekkich rozmów po angielsku z innymi kursantami. Startujemy już 1 lutego!"
+    },
     regularBonuses: [
       {
         title: "E-book do samodzielnej nauki języka z planem treningowym",

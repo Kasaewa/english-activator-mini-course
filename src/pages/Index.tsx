@@ -152,6 +152,10 @@ const Index = () => {
     document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const scrollToCurriculum = () => {
+    document.getElementById('curriculum')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen">
       {/* Hero + Problem Section */}
@@ -184,6 +188,15 @@ const Index = () => {
               >
                 {siteTexts.hero.cta}
                 <Sparkles className="ml-2 group-hover:animate-pulse" />
+              </Button>
+              <Button 
+                variant="outline" 
+                size="xl" 
+                onClick={scrollToCurriculum}
+                className="group border-2 border-primary text-primary hover:bg-primary hover:text-white"
+              >
+                {siteTexts.hero.ctaSecondary}
+                <BookOpen className="ml-2 group-hover:scale-110 transition-transform" />
               </Button>
             </div>
           </div>
@@ -263,8 +276,7 @@ const Index = () => {
             
             <div className="grid md:grid-cols-2 gap-6 mb-12">
               {siteTexts.benefits.items.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3 bg-card p-4 rounded-lg">
-                  <Check className="w-6 h-6 text-primary shrink-0 mt-1" />
+                <div key={index} className="bg-card p-4 rounded-lg">
                   <p className="text-lg">{benefit}</p>
                 </div>
               ))}
@@ -278,6 +290,19 @@ const Index = () => {
               <p className="text-lg leading-relaxed">
                 {siteTexts.benefits.personalReflection.secondParagraph}
               </p>
+            </div>
+            
+            {/* CTA Button */}
+            <div className="text-center mt-12">
+              <Button 
+                variant="cta" 
+                size="xl" 
+                onClick={scrollToPrice}
+                className="group"
+              >
+                {siteTexts.buttons.joinNow}
+                <Sparkles className="ml-2 group-hover:animate-pulse" />
+              </Button>
             </div>
           </div>
         </div>
@@ -300,6 +325,19 @@ const Index = () => {
               <p className="text-xl leading-relaxed font-medium text-primary">
                 {siteTexts.whyCreated.mission}
               </p>
+            </div>
+            
+            {/* CTA Button */}
+            <div className="text-center mt-12">
+              <Button 
+                variant="cta" 
+                size="xl" 
+                onClick={scrollToPrice}
+                className="group"
+              >
+                {siteTexts.buttons.joinNow}
+                <Sparkles className="ml-2 group-hover:animate-pulse" />
+              </Button>
             </div>
           </div>
         </div>
@@ -329,8 +367,7 @@ const Index = () => {
                 </p>
                 <div className="space-y-4">
                   {siteTexts.author.credentials.map((credential, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <Check className="w-6 h-6 text-primary shrink-0 mt-1" />
+                    <div key={index}>
                       <p>{credential}</p>
                     </div>
                   ))}
@@ -376,12 +413,25 @@ const Index = () => {
                 <p className="text-lg font-semibold text-primary">{siteTexts.author.personalStory.atmosphere.invitation}</p>
               </div>
             </div>
+            
+            {/* CTA Button */}
+            <div className="text-center mt-12">
+              <Button 
+                variant="cta" 
+                size="xl" 
+                onClick={scrollToPrice}
+                className="group"
+              >
+                {siteTexts.buttons.joinNow}
+                <Sparkles className="ml-2 group-hover:animate-pulse" />
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Curriculum Section */}
-      <section className="py-20 bg-background">
+      <section id="curriculum" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -415,6 +465,19 @@ const Index = () => {
                 );
               })}
             </div>
+            
+            {/* CTA Button */}
+            <div className="text-center mt-16">
+              <Button 
+                variant="cta" 
+                size="xl" 
+                onClick={scrollToPrice}
+                className="group"
+              >
+                {siteTexts.buttons.joinNow}
+                <Sparkles className="ml-2 group-hover:animate-pulse" />
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -430,15 +493,33 @@ const Index = () => {
               </h2>
             </div>
             
+            {/* Specjalny bonus dla pierwszych 20 osób */}
+            <Card className="mb-8 border-2 border-primary bg-gradient-to-r from-primary/10 to-accent/10">
+              <CardContent className="p-8">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                      <Gift className="w-6 h-6 text-white" />
+                    </div>
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="text-xl font-bold mb-2 text-primary">
+                      {siteTexts.bonuses.specialBonus.title}
+                    </h3>
+                    <p className="text-base leading-relaxed">
+                      {siteTexts.bonuses.specialBonus.description}
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            
             <div className="space-y-6">
               {siteTexts.bonuses.regularBonuses.map((bonus, index) => (
                 <Card key={index}>
-                  <CardContent className="p-6 flex items-start gap-4">
-                    <Check className="w-6 h-6 text-primary shrink-0 mt-1" />
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">{bonus.title}</h3>
-                      <p className="text-muted-foreground">{bonus.description}</p>
-                    </div>
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold mb-2">{bonus.title}</h3>
+                    <p className="text-muted-foreground">{bonus.description}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -463,8 +544,7 @@ const Index = () => {
                 </h3>
                 <div className="space-y-4">
                   {siteTexts.targetAudience.forWho.items.map((item, index) => (
-                    <div key={index} className="flex items-start gap-3 bg-card p-4 rounded-lg">
-                      <Check className="w-6 h-6 text-primary shrink-0 mt-0.5" />
+                    <div key={index} className="bg-card p-4 rounded-lg">
                       <p>{item}</p>
                     </div>
                   ))}
@@ -493,6 +573,19 @@ const Index = () => {
                 {siteTexts.targetAudience.summary}
               </p>
             </div>
+            
+            {/* CTA Button */}
+            <div className="text-center mt-12">
+              <Button 
+                variant="cta" 
+                size="xl" 
+                onClick={scrollToPrice}
+                className="group"
+              >
+                {siteTexts.buttons.joinNow}
+                <Sparkles className="ml-2 group-hover:animate-pulse" />
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -514,6 +607,19 @@ const Index = () => {
                   />
                 </div>
               ))}
+            </div>
+            
+            {/* CTA Button */}
+            <div className="text-center mt-12">
+              <Button 
+                variant="cta" 
+                size="xl" 
+                onClick={scrollToPrice}
+                className="group"
+              >
+                {siteTexts.buttons.joinNow}
+                <Sparkles className="ml-2 group-hover:animate-pulse" />
+              </Button>
             </div>
           </div>
         </div>
@@ -595,8 +701,7 @@ const Index = () => {
                 <div className="space-y-4">
                   <h3 className="text-2xl font-bold text-card-foreground">{siteTexts.pricing.packageTitle}</h3>
                   {siteTexts.pricing.packageItems.map((item, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <Check className="w-6 h-6 text-primary shrink-0 mt-1" />
+                    <div key={index}>
                       <p className="text-lg text-card-foreground">{item}</p>
                     </div>
                   ))}
@@ -635,6 +740,44 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Pricing Separator */}
+      <div className="py-4 bg-background"></div>
+
+{/* Pricing Section - Part 2 */}
+      <section className="py-20 bg-gradient-accent text-accent-foreground">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <Card className="border-4 border-accent-foreground/20">
+              <CardContent className="p-10 space-y-6">
+                <h3 className="text-xl font-bold text-card-foreground text-center mb-6">
+                  {siteTexts.pricing.targetProblems.title}
+                </h3>
+                <div className="space-y-4">
+                  {siteTexts.pricing.targetProblems.items.map((item, index) => (
+                    <div key={index}>
+                      <p className="text-lg text-card-foreground">{item}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="bg-primary/10 rounded-xl p-6 text-center mt-8">
+                  <p className="text-4xl font-bold text-primary mb-4">CENA: {siteTexts.pricing.price}</p>
+                </div>
+                
+                <Button 
+                  variant="default" 
+                  size="xl" 
+                  className="w-full text-xl h-16 bg-primary text-primary-foreground hover:bg-primary/90 shadow-warm hover:shadow-xl transform hover:scale-105 transition-all duration-300 font-bold"
+                  onClick={scrollToPrice}
+                >
+                  🎯 {siteTexts.pricing.cta}
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="py-20 bg-card">
         <div className="container mx-auto px-4">
@@ -655,42 +798,6 @@ const Index = () => {
                 </AccordionItem>
               ))}
             </Accordion>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section - Part 2 */}
-      <section className="py-20 bg-gradient-accent text-accent-foreground">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <Card className="border-4 border-accent-foreground/20">
-              <CardContent className="p-10 space-y-6">
-                <h3 className="text-xl font-bold text-card-foreground text-center mb-6">
-                  {siteTexts.pricing.targetProblems.title}
-                </h3>
-                <div className="space-y-4">
-                  {siteTexts.pricing.targetProblems.items.map((item, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <Check className="w-6 h-6 text-primary shrink-0 mt-1" />
-                      <p className="text-lg text-card-foreground">{item}</p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="bg-primary/10 rounded-xl p-6 text-center mt-8">
-                  <p className="text-4xl font-bold text-primary mb-4">CENA: {siteTexts.pricing.price}</p>
-                </div>
-                
-                <Button 
-                  variant="default" 
-                  size="xl" 
-                  className="w-full text-xl h-16 bg-primary text-primary-foreground hover:bg-primary/90 shadow-warm hover:shadow-xl transform hover:scale-105 transition-all duration-300 font-bold"
-                  onClick={scrollToPrice}
-                >
-                  🎯 {siteTexts.pricing.cta}
-                </Button>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>

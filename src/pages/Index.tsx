@@ -284,12 +284,8 @@ const Index = () => {
 
             {/* Personal reflection section */}
             <div className="bg-card rounded-2xl p-8 mb-12">
-              <p className="text-lg leading-relaxed mb-6">
-                {siteTexts.benefits.personalReflection.firstParagraph}
-              </p>
-              <p className="text-lg leading-relaxed">
-                {siteTexts.benefits.personalReflection.secondParagraph}
-              </p>
+              <p className="text-lg leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: siteTexts.benefits.personalReflection.firstParagraph }} />
+              <p className="text-lg leading-relaxed" dangerouslySetInnerHTML={{ __html: siteTexts.benefits.personalReflection.secondParagraph }} />
             </div>
             
             {/* CTA Button */}
@@ -362,14 +358,9 @@ const Index = () => {
               
               <div className="order-1 md:order-2 space-y-6">
                 <h3 className="text-3xl font-bold text-primary">{siteTexts.author.name}</h3>
-                <p className="text-lg leading-relaxed">
-                  {siteTexts.author.description}
-                </p>
                 <div className="space-y-4">
-                  {siteTexts.author.credentials.map((credential, index) => (
-                    <div key={index}>
-                      <p>{credential}</p>
-                    </div>
+                  {siteTexts.author.description.map((paragraph, index) => (
+                    <p key={index} className="text-lg leading-relaxed" dangerouslySetInnerHTML={{ __html: paragraph }} />
                   ))}
                 </div>
               </div>
@@ -569,9 +560,7 @@ const Index = () => {
             
             {/* Summary for A0 level */}
             <div className="mt-12 bg-gradient-hero rounded-xl p-6 text-center">
-              <p className="text-lg leading-relaxed">
-                {siteTexts.targetAudience.summary}
-              </p>
+              <p className="text-lg leading-relaxed" dangerouslySetInnerHTML={{ __html: siteTexts.targetAudience.summary }} />
             </div>
             
             {/* CTA Button */}

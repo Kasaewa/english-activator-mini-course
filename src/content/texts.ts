@@ -11,11 +11,11 @@ export const siteTexts = {
     guarantee: "💳 Bezpieczna płatność • ⚡ Natychmiastowy dostęp • 🔒 Gwarancja satysfakcji"
   },
 
+
   buttons: {
     joinNow: "Dołączam Teraz"
   },
- 
-  problem: {
+problem: {
     title: "Czy to brzmi znajomo?",
     issues: [
       "Wiele moich kursantek mówiło mi, że niby uczyły się angielskiego, ale w praktyce… nie używają go wcale. A potem widzą oferty pracy, gdzie angielski to must have — i od razu czują dreszcze. „A co jeśli zapytają mnie o coś banalnego, a ja się zatnę?” A ten stres nie kończy się na kwestii pracy. W podróży wolą, żeby odezwał się partner czy koleżanka. W restauracji udają, że nie słyszą. W głowie pojawia się czarna dziura, a one same zalewają się wstydem, bo „powinny umieć — przecież tyle lat się uczyły”."
@@ -37,13 +37,14 @@ export const siteTexts = {
       "Dowiesz się, co konkretnie robić, by uczyć się efektywnie, lekko i z przyjemnością.",
       "Zyskasz cenną wiedzę, czego nie robić – żebyś nie marnowała już więcej lat na metody, które nie działają.",
       "Zobaczysz, że nauka angielskiego może być banalnie prosta i trwać od kilku sekund do kilku minut dziennie.",
-      "Dostaniesz sprawdzone narzędzia z jasnymi instrukcjami.",
+      "Dostaniesz sprawdzone narzędzia z jasnymi instrukcjami. Możesz ich potem użyć do nauki kolejnych języków obcych.",
       "Poczujesz motywację do działania, tak żebyś mogła zacząć aktywizować Twój angielski od razu.",
-      "Zyskasz większą pewność siebie podczas konwersacji w j. angielskim.",
-      "Możesz zmienić swoją karierę zawodową, by pracować dla międzynarodowych firm.",
+      "Zyskasz większą pewność siebie podczas konwersacji w j. angielskim,co przełoży się na poprawę Twojego życia zawodowego i prywatnego.",
+      "Możesz zmienić swoją karierę zawodową, by pracować dla międzynarodowych firm, czy zacząć podróżować po świecie i z łatwością zawierać nowe znajomości w j. angielskim",
       "Dowiesz się, jak sprawić, by j. angielski był integralną częścią Twojej codzienności w przyjemny sposób.",
       "Jako skutek uboczny możesz pokochać naukę angielskiego i używanie go na co dzień!"
     ],
+
     personalReflection: {
       firstParagraph: "<strong>Gdybym tylko 10 lat temu wiedziała o tym</strong>, co przygotowałam dla Ciebie, uniknęłabym chronicznego stresu i ciągłego wstydu podczas mojego kilkuletniego życia w Anglii oraz zmarnowanego czasu i pieniędzy na nieefektywne kursy. A przecież ciągłe życie w stresie i wstydzie może prowadzić do wielu negatywnych konsekwencji fizycznych i psychicznych.",
       secondParagraph: "<strong>Im szybciej wdrożysz moje wskazówki</strong>, tym szybciej otworzysz się na swobodne korzystanie z j. angielskiego, a Twoja blokada przestanie się pogłębiać. Im dłużej będziesz odkładała naukę na potem, tym bardziej będzie wzrastać Twoja bariera w mówieniu i niechęć do angielskiego, a stres i lęk będą się pogłębiać – co będzie czyniło dalszą naukę jeszcze trudniejszą oraz prowadziło do innych negatywnych konsekwencji zdrowotnych."
@@ -54,6 +55,7 @@ export const siteTexts = {
       negative: "Im dłużej będziesz odkładała naukę na potem, tym bardziej będzie wzrastać Twoja bariera w mówieniu i niechęć do angielskiego, a stres i lęk będą się pogłębiać."
     }
   },
+
 
   testimonialScreens: {
     title: "Co mówią moje kursantki?",
@@ -66,7 +68,7 @@ export const siteTexts = {
         orientation: "horizontal"
       },
       {
-        id: 2, 
+        id: 2,
         image: "/src/assets/opinia2.png",
         alt: "Opinia kursantki 2",
         orientation: "horizontal"
@@ -74,7 +76,7 @@ export const siteTexts = {
       {
         id: 3,
         image: "/src/assets/opinia3.png",
-        alt: "Opinia kursantki 3", 
+        alt: "Opinia kursantki 3",
         orientation: "horizontal"
       },
       {
@@ -86,15 +88,17 @@ export const siteTexts = {
     ]
   },
 
+
   whyCreated: {
     title: "Dlaczego stworzyłam Aktywatory?",
     description: "Zajmuję się mentoringiem językowym i uczeniem angielskiego już od paru lat, ale wciąż obserwuję, że kolejne kobiety przychodzą do mnie z tymi samymi problemami oraz nawykami, które blokują ich naukę. Ponieważ nie mam możliwości pracy 1:1 z każdą, a niektóre z Was nie mogą pozwolić sobie na cotygodniowe sesje lub po prostu wolą pracować samodzielnie, a chciałyby mieć codzienny kontakt z językiem – wpadłam na pomysł Aktywatorów.",
     mission: "Moją intencją jest dotrzeć do jak największej liczby osób i pomóc im utrzymać codzienny kontakt z językiem w prosty sposób, by mogli się odblokować. Kocham moją pracę i moje kursantki, pomogłam tymi praktykami już grubo ponad setce kobiet – bo to głównie z nimi pracuję – i wiem, że moje metody działają."
   },
 
+
   solution: {
-    title: "Dlatego przygotowałam dla Ciebie zestaw prostych, szybkich i skutecznych praktyk, które aktywują Twój angielski już pierwszego dnia — bez stresu, bez blokady i bez dużych inwestycji.",
-    description: "Zestaw prostych, szybkich praktyk, które aktywują Twój mózg. Szkoła i podręczniki tego nie dają. To metoda na wyjście z kołowrotka stresu i wstydu.",
+    title: "Dlatego przygotowałam dla Ciebie zestaw prostych, szybkich i skutecznych praktyk.",
+    description: "To ćwiczenia, które aktywują Twój angielski już pierwszego dnia — bez stresu, bez blokady i bez dużych inwestycji.",
     features: {
       simple: {
         title: "Proste",
@@ -106,23 +110,22 @@ export const siteTexts = {
       },
       effective: {
         title: "Skuteczne",
-        description: "Pierwsze efekty zobaczysz już po tygodniu"
+        description: "Pierwsze efekty zobaczysz już po 1 tygodniu"
       }
     }
   },
- 
-  curriculum: {
+curriculum: {
     title: "Co znajdziesz w programie?",
     subtitle: "6 filmów VOD + bonusy, które odmienią Twój angielski",
     modules: [
       {
         title: "VOD 1: Aktywatory Słuchania",
-        description: "Filmy, piosenki, reelsy jako Twoja codzienność językowa",
+        description: "Jak zamienić filmy, piosenki i reelsy w codzienną lekcję angielskiego.",
         duration: "15 min"
       },
       {
         title: "VOD 2: Aktywatory Mówienia",
-        description: "1-minutowe wyzwania, shadowing, dialogi dla pewności siebie",
+        description: "Freestyle challenges, shadowing, mini-dialogi i inne sposoby na codzienne mówienie bez partnera i bez stresu.",
         duration: "18 min"
       },
       {
@@ -132,17 +135,17 @@ export const siteTexts = {
       },
       {
         title: "VOD 4: Aktywatory Pisania",
-        description: "Krótkie wiadomości i wykorzystanie AI w nauce",
+        description: "Wiadomości, maile i wykorzystanie AI w nauce",
         duration: "14 min"
       },
       {
         title: "VOD 5: Boostery pewności siebie",
-        description: "Myślenie po angielsku i gry mentalne bez stresu",
+        description: "Myślenie po angielsku,gry i ćwiczenia mentalne, które włączają luz",
         duration: "20 min"
       },
       {
         title: "VOD 6: My English Journey",
-        description: "Moja historia – jak przeszłam tę samą drogę",
+        description: "Moja historia: Jak angielski otworzył mi drzwi, o których kiedyś bałam się nawet marzyć — i dlaczego warto zacząć, nawet jeśli czujesz opór.",
         duration: "16 min"
       }
     ]
@@ -152,12 +155,12 @@ export const siteTexts = {
     title: "Dodatkowe bonusy:",
     specialBonus: {
       title: "BONUS dla pierwszych 20 osób: Talk & Chill Room – dostęp na 30 dni",
-      description: "Dostęp do \"Talk & Chill Room\" — miejsca do luźnych, lekkich rozmów po angielsku z innymi kursantami. Startujemy już 1 lutego!"
+      description: "Dostęp do \"Talk & Chill Room\" — miejsca do luźnych, lekkich rozmów i spotkań po angielsku z innymi kursantami. Startujemy już 1 lutego!"
     },
     regularBonuses: [
       {
         title: "E-book do samodzielnej nauki języka z planem treningowym",
-        description: "Kompletny przewodnik z gotowym planem treningowym do samodzielnej nauki"
+        description: "Kompletny przewodnik z gotowym planem treningowym do samodzielnej nauki. DLa tych, którzy chcą wejść głębiej w naukę."
       },
       {
         title: "Checklistę z Twoimi ulubionymi aktywatorami na każdy tydzień",
@@ -165,7 +168,7 @@ export const siteTexts = {
       },
       {
         title: "Zestaw wspierających afirmacji wspomagających naukę języka PDF/Audio",
-        description: "Pozytywne afirmacje w formacie PDF i audio do wzmacniania motywacji"
+        description: "Pozytywne afirmacje w formacie PDF i audio do wzmacniania motywacji, pewności siebie i łamania blokad mentalnych"
       }
     ]
   },
@@ -187,7 +190,7 @@ export const siteTexts = {
     },
     credentials: [
       "Uczyłam wcześniej w brytyjskich szkołach – zarówno publicznych, jak i prywatnych",
-      "Pracowałam zarówno z Anglikami, jak i obcokrajowcami", 
+      "Pracowałam zarówno z Anglikami, jak i obcokrajowcami",
       "Obecnie jestem w trakcie kursu neurodydaktyki – nauki o tym, jak uczy się mózg",
       "Pomagam Wam mówić własnym głosem – pewnie, swobodnie i bez barier",
       "Mieszkam już drugi rok w słonecznej Hiszpanii, gdzie żyję na co dzień w trzech językach",
@@ -200,7 +203,7 @@ export const siteTexts = {
       breakthrough: "Teraz? Czuję się często o wiele bardziej swobodnie w języku angielskim niż w polskim. Ukończyłam studia licencjackie na jednej z lepszych uczelni w UK z pierwszą klasą z wyróżnieniem.",
       whyImportant: {
         title: "Dlaczego to takie ważne?",
-        problem: "Bo wiele moich kursantek mówiło mi, że uczyły się słówek i konstrukcji, których nikt za granicą nie używa — albo nawet nie rozumie. Ten problem pojawia się non stop w grupach dla Polek mieszkających w UK czy USA. Część nauczycieli i twórców kursów nigdy nie mieszkała w kraju anglojęzycznym, więc uczą angielskiego…książkowego. A ten znaczy różni się od żywego, codziennego języka.",
+        problem: "Bo wiele moich kursantek mówiło mi, że uczyły się słówek i konstrukcji, których nikt za granicą nie używa — albo nawet nie rozumie. Ten problem pojawia się non stop w grupach dla Polek mieszkających w UK czy USA. Część nauczycieli i twórców kursów nigdy nie mieszkała w kraju anglojęzycznym, więc uczą angielskiego…książkowego. A ten znaczy różnie się od żywego, codziennego języka.",
         image: "/src/assets/history1.png",
         imageAlt: "Różnice między angielskim książkowym a żywym",
         imagePlaceholderText: "Placeholder dla history1.png",
@@ -215,6 +218,7 @@ export const siteTexts = {
     }
   },
 
+
   personalStory: {
     title: "Ja też tam byłam...",
     content: [
@@ -225,10 +229,11 @@ export const siteTexts = {
     ]
   },
 
+
   caseStudy: {
     title: "Poznaj historię mojej kursantki Ani",
-    intro: "Ania była osobą, która w szkole nie miała angielskiego wcale — tylko rosyjski, który ledwo zaliczała dzięki litości nauczycielki. Ale Ania bardzo chciała zdobyć dobrą pracę w Anglii, więc próbowała uczyć się angielskiego na różne sposoby i z różnymi lektorami czyli aplikacjami typu Doulingo. Ale nic nie działało. Była wkurzona i załamana.",
-    problem: "Blokada tylko się pogłębiała. Strach przed mówieniem był tak duży, że nawet zwykłe „hello” w sklepie wywoływało panikę. Na korepetycjach czuła, że słowa wpadają jednym uchem, a drugim wypadają. Po zajęciach nie pamiętała praktycznie nic, a co dopiero mówić o używaniu języka w życiu. Była przekonana, że jest „beztanentem”, że już się nie nauczy, bo nie ma talentu do języka.",
+    intro: "Ania była osobą, która w szkole nie miała angielskiego wcale — tylko rosyjski, który ledwo zaliczała dzięki litości nauczycielki. Ale Ania bardzo chciała zdobyć dobrą pracę w Anglii, więc próbowała uczyć się angielskiego na różne sposoby i z różnymi lektorami czya aplikacjami typu Doulingo. Ale nic nie działało. Była wkurzona i załamana.",
+    problem: "Blokada tylko się pogłębiała. Strach przed mówieniem był tak duży, że nawet zwykłe „hello” w sklepie wywoływało panikę. Na korepetycjach czuła, że słowa wpadają jednym uchem, a drugim wypadają. Po zajęciach nie pamiętała praktycznie nic, a co dopiero mówić o używaniu języka w życiu. Była przekonana, że jest ‘’głupsza’’ od innych i że już się nie nauczy, bo nie ma talentu do języków.",
     solution: "Kiedy zgłosiła się do mnie, od razu wiedziałam, że musimy pracować nie tylko nad językiem, ale przede wszystkim nad poczuciem własnej wartości, motywacją i pewnością siebie. Dopiero wtedy mogła zacząć się naprawdę otwierać na angielski i wprowadzić go EFEKTYWNIE do swojej rutyny. I w końcu stało się to, na co tak czekała…",
     result: "Ania — mieszkając już w Anglii — dostała awans na andona, czyli operatora wspierającego swój zespół, w którym byli Anglicy i inni obcokrajowcy. Byłam z niej niesamowicie dumna… a ona z siebie jeszcze bardziej.",
     beforeImage: "casestudy1",
@@ -305,13 +310,13 @@ export const siteTexts = {
     targetProblems: {
       title: "Jeśli choć jedna z tych rzeczy Cię dotyczy, to moje Aktywatory są zdecydowanie dla Ciebie i już czas się tym zająć:",
       items: [
-        "jeśli teraz czujesz, że brakuje Ci codziennego kontaktu z angielskim",
-        "rozmowy Cię stresują i nie jesteś w stanie używać angielskiego ze swobodą czy pewnością siebie",
-        "szkolne metody nauki czy aplikacje na telefon Ci nie pomagają",
-        "nie masz czasu lub pieniędzy na długie, skomplikowane i drogie kursy językowe",
-        "brakuje Ci motywacji, aby ruszyć z nauką angielskiego",
-        "masz poczucie, że Twój angielski stoi w miejscu i nie możesz wejść poziom wyżej",
-        "czujesz się zagubiona w ilości kursów, aplikacji, metod i ćwiczeń - potrzebujesz jasnych instrukcji"
+        "● jeśli teraz czujesz, że brakuje Ci codziennego kontaktu z angielskim",
+        "● rozmowy Cię stresują i nie jesteś w stanie używać angielskiego ze swobodą czy pewnością siebie",
+        "● szkolne metody nauki czy aplikacje na telefon Ci nie pomagają",
+        "● nie masz czasu lub pieniędzy na długie, skomplikowane i drogie kursy językowe",
+        "● brakuje Ci motywacji, aby ruszyć z nauką angielskiego",
+        "● masz poczucie, że Twój angielski stoi w miejscu i nie możesz wejść poziom wyżej",
+        "● czujesz się zagubiona w ilości kursów, aplikacji, metod i ćwiczeń - potrzebujesz jasnych instrukcji"
       ]
     },
     value: {
@@ -373,4 +378,5 @@ export const siteTexts = {
     }
   }
 };
+
 

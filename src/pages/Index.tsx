@@ -155,6 +155,10 @@ const Index = () => {
     document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
   };
   
+  const scrollToPricingPart2 = () => {
+    document.getElementById('pricing-part2')?.scrollIntoView({ behavior: 'smooth' });
+  };
+  
   const goToPayment = () => {
     navigate('/platnosc');
   };
@@ -526,6 +530,65 @@ const Index = () => {
         </div>
       </section>
 
+
+      {/* Pricing Section - Part 1 */}
+      <section id="pricing" className="py-20 bg-gradient-accent text-accent-foreground">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-6xl font-bold mb-6">
+                {siteTexts.pricing.title} <span className="text-7xl md:text-8xl">{siteTexts.pricing.price}</span>
+              </h2>
+              <p className="text-xl opacity-90">
+                {siteTexts.pricing.subtitle}
+              </p>
+            </div>
+            
+            <Card className="border-4 border-accent-foreground/20">
+              <CardContent className="p-10 space-y-8">
+                <div className="space-y-4">
+                  <h3 className="text-2xl font-bold text-card-foreground">{siteTexts.pricing.packageTitle}</h3>
+                  {siteTexts.pricing.packageItems.map((item, index) => (
+                    <div key={index}>
+                      <p className="text-lg text-card-foreground">{item}</p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Bonuses Section */}
+                <div className="space-y-4 border-t border-accent-foreground/20 pt-6">
+                  <h3 className="text-2xl font-bold text-card-foreground">{siteTexts.pricing.bonuses.title}</h3>
+                  {siteTexts.pricing.bonuses.items.map((item, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <Gift className="w-6 h-6 text-primary shrink-0 mt-1" />
+                      <p className="text-lg text-card-foreground">{item}</p>
+                    </div>
+                  ))}
+                </div>
+                
+                <div className="bg-primary/10 rounded-xl p-6 text-center">
+                  <p className="text-4xl font-bold text-primary mb-4">CENA: {siteTexts.pricing.price}</p>
+                </div>
+                
+                <Button 
+                  variant="default" 
+                  size="xl" 
+                  className="w-full text-lg md:text-xl h-20 md:h-16 bg-primary text-primary-foreground hover:bg-primary/90 shadow-warm hover:shadow-xl transform hover:scale-105 transition-all duration-300 font-bold leading-tight py-3 px-4 whitespace-normal break-words"
+                  onClick={goToPayment}
+                >
+                  🎯 {siteTexts.pricing.cta}
+                </Button>
+                
+                <p className="text-center text-sm text-card-foreground/70">
+                  {siteTexts.pricing.guarantee}
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+
       {/* Target Audience Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
@@ -575,7 +638,7 @@ const Index = () => {
               <Button 
                 variant="cta" 
                 size="xl" 
-                onClick={scrollToPrice}
+                onClick={scrollToPricingPart2}
                 className="group"
               >
                 {siteTexts.buttons.joinNow}
@@ -610,7 +673,7 @@ const Index = () => {
               <Button 
                 variant="cta" 
                 size="xl" 
-                onClick={scrollToPrice}
+                onClick={scrollToPricingPart2}
                 className="group"
               >
                 {siteTexts.buttons.joinNow}
@@ -675,72 +738,8 @@ const Index = () => {
         </div>
       </section>
 
-      
-
-      
-
-      {/* Pricing Section - Part 1 */}
-      <section id="pricing" className="py-20 bg-gradient-accent text-accent-foreground">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-6xl font-bold mb-6">
-                {siteTexts.pricing.title} <span className="text-7xl md:text-8xl">{siteTexts.pricing.price}</span>
-              </h2>
-              <p className="text-xl opacity-90">
-                {siteTexts.pricing.subtitle}
-              </p>
-            </div>
-            
-            <Card className="border-4 border-accent-foreground/20">
-              <CardContent className="p-10 space-y-8">
-                <div className="space-y-4">
-                  <h3 className="text-2xl font-bold text-card-foreground">{siteTexts.pricing.packageTitle}</h3>
-                  {siteTexts.pricing.packageItems.map((item, index) => (
-                    <div key={index}>
-                      <p className="text-lg text-card-foreground">{item}</p>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Bonuses Section */}
-                <div className="space-y-4 border-t border-accent-foreground/20 pt-6">
-                  <h3 className="text-2xl font-bold text-card-foreground">{siteTexts.pricing.bonuses.title}</h3>
-                  {siteTexts.pricing.bonuses.items.map((item, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <Gift className="w-6 h-6 text-primary shrink-0 mt-1" />
-                      <p className="text-lg text-card-foreground">{item}</p>
-                    </div>
-                  ))}
-                </div>
-                
-                <div className="bg-primary/10 rounded-xl p-6 text-center">
-                  <p className="text-4xl font-bold text-primary mb-4">CENA: {siteTexts.pricing.price}</p>
-                </div>
-                
-                <Button 
-                  variant="default" 
-                  size="xl" 
-                  className="w-full text-lg md:text-xl h-20 md:h-16 bg-primary text-primary-foreground hover:bg-primary/90 shadow-warm hover:shadow-xl transform hover:scale-105 transition-all duration-300 font-bold leading-tight py-3 px-4 whitespace-normal break-words"
-                  onClick={goToPayment}
-                >
-                  🎯 {siteTexts.pricing.cta}
-                </Button>
-                
-                <p className="text-center text-sm text-card-foreground/70">
-                  {siteTexts.pricing.guarantee}
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Separator */}
-      <div className="py-4 bg-background"></div>
-
 {/* Pricing Section - Part 2 */}
-      <section className="py-20 bg-gradient-accent text-accent-foreground">
+      <section id="pricing-part2" className="py-20 bg-gradient-accent text-accent-foreground">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <Card className="border-4 border-accent-foreground/20">

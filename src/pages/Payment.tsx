@@ -10,7 +10,7 @@ const Payment = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center">
+    <div className="iframe-root bg-background flex items-center justify-center">
       <div className="max-w-md mx-auto text-center space-y-8 p-8">
         <h1 className="text-3xl md:text-4xl font-bold text-foreground">
           Oto strona z płatnościami

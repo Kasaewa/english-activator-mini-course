@@ -71,17 +71,3 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
-
-## Embedding in an iframe
-
-This app is ready to be embedded inside an iframe. The project disables internal scrolling and expands to fill the iframe window.
-
-Suggested iframe attributes:
-
-```html
-<iframe src="https://your-deployed-site.example" width="100%" height="100%" style="border:0;" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" sandbox="allow-scripts allow-same-origin"></iframe>
-```
-
-Notes:
-- The app sets `html`, `body` and the React root to `height:100%` and `overflow:hidden`.
-- If you need the parent page to control the iframe height dynamically, use `postMessage` or an auto-resize script in the parent.

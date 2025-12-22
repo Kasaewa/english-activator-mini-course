@@ -102,17 +102,5 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 
-  /* Iframe-friendly: make app fill parent and prevent internal scrolling */
-  html, #root, body {
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-  }
-
-  /* Utility root class to ensure content expands and hides overflow inside iframe */
-  .iframe-root {
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-  }
+  /* (no iframe-specific styles here) */
 }

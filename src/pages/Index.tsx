@@ -168,10 +168,10 @@ const Index = () => {
   };
 
   return (
-    <div className="iframe-root">
+    <div className="min-h-screen">
       {/* Hero + Problem Section */}
       <section 
-        className="relative h-full flex items-center justify-center overflow-hidden"
+        className="relative min-h-[100vh] flex items-center justify-center overflow-hidden"
         style={{
           backgroundImage: `linear-gradient(135deg, rgba(252, 243, 224, 0.95) 0%, rgba(252, 231, 203, 0.9) 100%), url(${heroBackground})`,
           backgroundSize: 'cover',

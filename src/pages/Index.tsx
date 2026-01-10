@@ -30,6 +30,7 @@ import opinia3 from "@/assets/opinia3.png";
 import opinia4 from "@/assets/opinia4.png";
 import casestudy1 from "@/assets/casestudy1.png";
 import casestudy2 from "@/assets/casestudy2.png";
+import coverImage from "@/assets/cover.png";
 import { siteTexts } from "@/content/texts";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -182,12 +183,19 @@ const Index = () => {
         <div className="container mx-auto px-4 py-20 relative z-10">
           {/* Hero Content */}
           <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in mb-12">
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-              {siteTexts.hero.title.main}{" "}
-              <span className="text-primary">{siteTexts.hero.title.accent}</span>
+            {/* Cover image on medium+ screens, fallback to text on small screens */}
+            <img
+              src={coverImage}
+              alt={siteTexts.hero.title.main}
+              className="hidden md:block w-full h-auto rounded-lg mx-auto max-w-4xl"
+            />
+
+            {/* Keep original text for smaller devices */}
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight md:hidden">
+              {siteTexts.hero.title.main} <span className="text-primary">{siteTexts.hero.title.accent}</span>
             </h1>
-            
-            <p className="text-2xl md:text-3xl text-muted-foreground max-w-3xl mx-auto">
+
+            <p className="text-2xl md:text-3xl text-muted-foreground max-w-3xl mx-auto md:hidden">
               {siteTexts.hero.subtitle}
             </p>
             

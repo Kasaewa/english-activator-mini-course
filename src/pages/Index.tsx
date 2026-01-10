@@ -160,7 +160,8 @@ const Index = () => {
   };
   
   const goToPayment = () => {
-    navigate('/platnosc');
+    // Redirect to external payment page
+    window.location.href = 'https://sun-mentoring.com/courses/english-activator/';
   };
 
   const scrollToCurriculum = () => {

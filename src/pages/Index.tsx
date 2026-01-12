@@ -500,9 +500,9 @@ const Index = () => {
                       <IconComponent className="w-7 h-7 text-accent-foreground" />
                     </div>
                     <div>
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-lg font-semibold">{module.title}</h3>
-                        <span className="text-xs bg-secondary px-2 py-1 rounded-full text-muted-foreground">
+                      <div className="flex items-center justify-between gap-2 mb-2">
+                        <h3 className="text-lg font-semibold flex-1">{module.title}</h3>
+                        <span className="text-xs bg-secondary px-2 py-1 rounded-full text-muted-foreground shrink-0 whitespace-nowrap">
                           {module.duration}
                         </span>
                       </div>

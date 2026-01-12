@@ -121,32 +121,32 @@ curriculum: {
       {
         title: "VOD 1: Aktywatory Słuchania",
         description: "Jak zamienić filmy, piosenki i reelsy w codzienną lekcję angielskiego.",
-        duration: "15 min"
+        duration: "67 min"
       },
       {
         title: "VOD 2: Aktywatory Mówienia",
         description: "Freestyle challenges, shadowing, mini-dialogi i inne sposoby na codzienne mówienie bez partnera i bez stresu.",
-        duration: "18 min"
+        duration: "46 min"
       },
       {
         title: "VOD 3: Aktywatory Czytania",
         description: "Social media, newsy – czytaj to, co Cię interesuje",
-        duration: "12 min"
+        duration: "44 min"
       },
       {
         title: "VOD 4: Aktywatory Pisania",
         description: "Wiadomości, maile i wykorzystanie AI w nauce",
-        duration: "14 min"
+        duration: "40 min"
       },
       {
         title: "VOD 5: Boostery pewności siebie",
         description: "Myślenie po angielsku,gry i ćwiczenia mentalne, które włączają luz",
-        duration: "20 min"
+        duration: "52 min"
       },
       {
-        title: "VOD 6: My English Journey",
+        title: "VOD 6: Our English Journey – Aktywator Twojej Motywacji",
         description: "Moja historia: Jak angielski otworzył mi drzwi, o których kiedyś bałam się nawet marzyć — i dlaczego warto zacząć, nawet jeśli czujesz opór.",
-        duration: "16 min"
+        duration: "45 min"
       }
     ]
   },
@@ -326,40 +326,52 @@ curriculum: {
       priceText: "Twoja cena:"
     },
     cta: "Dołączam do programu English Activator",
-    guarantee: "💳 Bezpieczna płatność • 🔒 Faktura automatyczna • ⚡ Dostęp natychmiast"
+    guarantee: "💳 Bezpieczna płatność • 🔒 Dane chronione • ⚡ Dostęp do platformy natychmiast"
   },
  
   faq: {
     title: "FAQ – najczęściej pojawiające się pytania",
     questions: [
-      {
-        question: "Co się dzieje po zakupie?",
-        answer: "Po zakupie otrzymujesz maila z dostępem do zalogowania się na platformie kursowej."
-      },
-      {
-        question: "Gdzie otrzymam informacje?",
-        answer: "Wszystkie informacje dostaniesz na maila podanego podczas zakupu."
-      },
-      {
-        question: "Jak się zalogować?",
-        answer: "Instrukcja logowania znajduje się w Twoim mailu."
-      },
-      {
-        question: "Jak długo mam dostęp?",
-        answer: "Dostęp do platformy oraz aktualizacji masz przez 3 lata – aby zmobilizować Cię do działania."
-      },
-      {
-        question: "Kto przetwarza moje dane?",
-        answer: "Firma SUN Mentoring Natalia Chas, zarejestrowana w Londynie (UK), przetwarza Twoje dane."
-      },
-      {
-        question: "Czy dostanę fakturę?",
-        answer: "Tak, otrzymasz fakturę na maila od razu po zakupie."
-      },
-      {
-        question: "Czy potrzebuję jakichś narzędzi do działania?",
-        answer: "Potrzebujesz aktywnego adresu e-mail, żeby dostać dostęp do platformy, oraz chęci do działania."
-      }
+{
+  question: "Jak wygląda proces zakupu kursu?",
+  answer: "Po kliknięciu przycisku „Dołączam teraz” kliknij „Dodaj do koszyka”. Następnie zarejestruj się lub zaloguj, jeśli posiadasz już swoje konto kursanta. Po zalogowaniu się ponownie dodajesz kurs do koszyka i finalizujesz zakup. Zakup jako gość nie jest możliwy – kurs jest przypisywany do Twojego konta."
+},
+{
+  question: "Dlaczego muszę założyć konto?",
+  answer: "Konto jest potrzebne, aby przypisać kurs do Ciebie i umożliwić dostęp do materiałów na platformie w zakładce „Kursy”."
+},
+{
+  question: "Co się dzieje po zakupie?",
+  answer: "Jeśli płatność jest natychmiastowa, po zakupie zostaniesz automatycznie przeniesiona/przeniesiony do kursu. Dodatkowo wszystkie informacje otrzymasz na maila."
+},
+{
+  question: "Gdzie znajdę kurs po zakupie?",
+  answer: "Po zalogowaniu się na swoje konto kurs zawsze będzie dostępny w zakładce „Kursy” na stronie."
+},
+{
+  question: "Co jeśli wybrałam/wybrałem płatność ręczną?",
+  answer: "Po zaksięgowaniu i zaakceptowaniu płatności otrzymasz maila z potwierdzeniem. Od tego momentu kurs będzie dostępny w zakładce „Kursy” po zalogowaniu."
+},
+{
+  question: "Jak się zalogować do platformy?",
+  answer: "Instrukcję logowania otrzymasz mailowo po rejestracji i zakupie. Logowanie odbywa się bezpośrednio na stronie platformy."
+},
+{
+  question: "Jak długo mam dostęp do kursu?",
+  answer: "Dostęp do kursu oraz aktualizacji masz przez 3 lata od momentu zakupu."
+},
+{
+  question: "Czy dostanę potwierdzenie zakupu?",
+  answer: "Tak, po zakupie otrzymasz mailowe potwierdzenie z informacjami o dostępie do kursu."
+},
+{
+  question: "Czy potrzebuję dodatkowych narzędzi?",
+  answer: "Wystarczy aktywny adres e-mail oraz dostęp do internetu. Cały kurs realizujesz online po zalogowaniu."
+},
+{
+  question: "Kto przetwarza moje dane?",
+  answer: "Administratorem danych jest firma SUN Mentoring Natalia Chas, zarejestrowana w Londynie (UK). Dane są przetwarzane wyłącznie w celu realizacji dostępu do kursu."
+}
     ]
   },
  

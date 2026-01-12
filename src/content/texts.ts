@@ -167,7 +167,7 @@ curriculum: {
         description: "Praktyczna lista kontrolna z aktywatorami do codziennego użytku"
       },
       {
-        title: "Zestaw wspierających afirmacji wspomagających naukę języka PDF/Audio",
+        title: "Zestaw wspierających afirmacji wspomagających naukę języka PDF",
         description: "Pozytywne afirmacje w formacie PDF i audio do wzmacniania motywacji, pewności siebie i łamania blokad mentalnych"
       }
     ]
@@ -304,7 +304,7 @@ curriculum: {
         "Dla pierwszych 20 osób: Dostęp do \"Talk & Chill Room\" - miejsca do luźnych, lekkich rozmów po angielsku z innymi kursantami",
         "E-book do samodzielnej nauki angielskiego z planem treningowym, który zorganizuje Twoją naukę na kolejne miesiące lub lata",
         "Checklistę z Twoimi ulubionymi aktywatorami do śledzenia postępów - na każdy tydzień",
-        "Zestaw wspierających afirmacji wspomagających naukę angielskiego w formie PDF/Audio"
+        "Zestaw wspierających afirmacji wspomagających naukę angielskiego w formie PDF"
       ]
     },
     targetProblems: {

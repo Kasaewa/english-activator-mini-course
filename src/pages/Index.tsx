@@ -158,7 +158,7 @@ const Index = () => {
   
   const goToPayment = () => {
     // Redirect to external payment page
-    window.location.href = 'https://sun-mentoring.com/courses/english-activator/';
+    window.location.href = 'https://sun-mentoring.com/koszyk-2/?add-to-cart=3348';
   };
 
   const scrollToCurriculum = () => {

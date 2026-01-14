@@ -730,7 +730,7 @@ const Index = () => {
                   </div>
                   
 <a
-  href="https://sun-mentoring.com/courses/english-activator/?add-to-cart=3348"
+  href="https://sun-mentoring.com/koszyk-2/?add-to-cart=3348"
   target="_blank"
   rel="noopener noreferrer"
   className="inline-flex items-center justify-center gap-2 w-full text-lg md:text-xl h-20 md:h-16 bg-primary text-primary-foreground hover:bg-primary/90 shadow-warm hover:shadow-xl transform hover:scale-105 transition-all duration-300 font-bold leading-tight py-3 px-4 whitespace-normal break-words rounded-lg"

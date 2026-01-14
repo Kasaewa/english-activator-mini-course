@@ -292,7 +292,8 @@ curriculum: {
  
   pricing: {
     title: "Zacznij dziś za",
-    price: "47 PLN",
+    price: "47 PLN*",
+    priceInfo: "*Cena w PLN ma charakter informacyjny | Płatność realizowana jest w euro (12 EUR) | Ostateczna kwota w PLN zależy od kursu Twojego banku.",
     subtitle: "Zamiast płacić tysiące za długie kursy – zainwestuj w metodę, która działa",
     packageTitle: "Co dostajesz w pakiecie?",
     packageItems: [
@@ -321,7 +322,7 @@ curriculum: {
     },
     value: {
       original: "397 PLN",
-      current: "47 PLN",
+      current: "47 PLN*",
       valueText: "Wartość pakietu:",
       priceText: "Twoja cena:"
     },
@@ -334,35 +335,38 @@ curriculum: {
     questions: [
 {
   question: "Jak wygląda proces zakupu kursu?",
-  answer: "Po kliknięciu przycisku „Dołączam teraz” kliknij „Dodaj do koszyka”. Następnie zarejestruj się lub zaloguj, jeśli posiadasz już swoje konto kursanta. Po zalogowaniu się ponownie dodajesz kurs do koszyka i finalizujesz zakup. Zakup jako gość nie jest możliwy – kurs jest przypisywany do Twojego konta."
+  answer: "Po kliknięciu przycisku „Dołączam teraz” zostaniesz automatycznie przeniesiona/przeniesiony do koszyka, w którym kurs jest już dodany. Następnie finalizujesz zakup. Jeśli nie masz jeszcze konta, zostanie ono utworzone automatycznie podczas składania zamówienia."
 },
 {
-  question: "Dlaczego muszę założyć konto?",
-  answer: "Konto jest potrzebne, aby przypisać kurs do Ciebie i umożliwić dostęp do materiałów na platformie w zakładce „Kursy”."
+  question: "Czy muszę mieć konto, aby kupić kurs?",
+  answer: "Tak, konto jest wymagane, ponieważ kurs jest przypisywany do Twojego profilu. Jeśli masz już konto – wystarczy się zalogować. Jeśli nie, konto zostanie utworzone automatycznie podczas zakupu na adres e-mail podany w zamówieniu, a na maila otrzymasz link do ustawienia hasła."
+},
+{
+  question: "W jakiej walucie jest płatność?",
+  answer: "Płatność realizowana jest w euro (12 EUR). Cena w PLN (47 zł) ma charakter orientacyjny i może się nieznacznie różnić w zależności od kursu Twojego banku."
 },
 {
   question: "Co się dzieje po zakupie?",
-  answer: "Jeśli płatność jest natychmiastowa, po zakupie zostaniesz automatycznie przeniesiona/przeniesiony do kursu. Dodatkowo wszystkie informacje otrzymasz na maila."
-},
+  answer: "Jeśli płatność jest natychmiastowa, po zakupie otrzymasz dostęp do kursu od razu."},
 {
   question: "Gdzie znajdę kurs po zakupie?",
-  answer: "Po zalogowaniu się na swoje konto kurs zawsze będzie dostępny w zakładce „Kursy” na stronie."
+  answer: "Po zalogowaniu się kurs będzie dostępny w zakładce „Moje konto” oraz „Kursy”."
 },
 {
-  question: "Co jeśli wybrałam/wybrałem płatność ręczną?",
-  answer: "Po zaksięgowaniu i zaakceptowaniu płatności otrzymasz maila z potwierdzeniem. Od tego momentu kurs będzie dostępny w zakładce „Kursy” po zalogowaniu."
+  question: "Co jeśli wybrałam/wybrałem płatność przelewem tradycyjnym?",
+  answer: "Po zaksięgowaniu i zaakceptowaniu płatności otrzymasz mailowe potwierdzenie. Od tego momentu kurs będzie dostępny po zalogowaniu w zakładce „Moje konto” lub „Kursy”."
 },
 {
   question: "Jak się zalogować do platformy?",
-  answer: "Instrukcję logowania otrzymasz mailowo po rejestracji i zakupie. Logowanie odbywa się bezpośrednio na stronie platformy."
+  answer: "Aby się zalogować, przejdź do zakładki „Moje konto” na stronie. Jeśli konto zostało utworzone automatycznie, po zakupie otrzymasz maila z linkiem do ustawienia własnego hasła."
 },
 {
   question: "Jak długo mam dostęp do kursu?",
-  answer: "Dostęp do kursu oraz aktualizacji masz przez 3 lata od momentu zakupu."
+  answer: "Dostęp do kursu oraz wszystkich aktualizacji masz przez 3 lata od momentu zakupu."
 },
 {
   question: "Czy dostanę potwierdzenie zakupu?",
-  answer: "Tak, po zakupie otrzymasz mailowe potwierdzenie z informacjami o dostępie do kursu."
+  answer: "Tak. Po zakupie otrzymasz mailowe potwierdzenie zawierające informacje o dostępie do kursu."
 },
 {
   question: "Czy potrzebuję dodatkowych narzędzi?",

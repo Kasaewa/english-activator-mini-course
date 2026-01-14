@@ -84,11 +84,11 @@ const TestimonialCarousel = () => {
             <Card className="overflow-hidden">
               <CardContent className="p-8">
                 <div className="relative flex items-center justify-center">
-                  {/* Przyciski nawigacji */}
+                  {/* Przyciski nawigacji - widoczne tylko na urządzeniach md i wyższych */}
                   <Button
                     variant="outline"
                     size="icon"
-                    className="absolute left-4 z-10 bg-background/80 backdrop-blur-sm hover:bg-background/90"
+                    className="absolute left-4 z-10 bg-background/80 backdrop-blur-sm hover:bg-background/90 hidden md:flex"
                     onClick={goToPrevious}
                   >
                     <ChevronLeft className="h-4 w-4" />
@@ -97,7 +97,7 @@ const TestimonialCarousel = () => {
                   <Button
                     variant="outline"
                     size="icon"
-                    className="absolute right-4 z-10 bg-background/80 backdrop-blur-sm hover:bg-background/90"
+                    className="absolute right-4 z-10 bg-background/80 backdrop-blur-sm hover:bg-background/90 hidden md:flex"
                     onClick={goToNext}
                   >
                     <ChevronRight className="h-4 w-4" />
@@ -156,10 +156,7 @@ const Index = () => {
     document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
   };
   
-  const goToPayment = () => {
-    // Redirect to external payment page
-    window.location.href = 'https://sun-mentoring.com/koszyk-2/?add-to-cart=3348';
-  };
+
 
   const scrollToCurriculum = () => {
     document.getElementById('curriculum')?.scrollIntoView({ behavior: 'smooth' });
@@ -727,16 +724,19 @@ const Index = () => {
                 <div className="border-t border-accent-foreground/20 pt-6 border-b pb-6">
                   <div className="bg-primary/10 rounded-xl p-6 text-center mb-6">
                     <p className="text-4xl font-bold text-primary mb-4">CENA: <span className="whitespace-nowrap">{siteTexts.pricing.price}</span></p>
+                    <p className="text-xs text-muted-foreground opacity-75">
+                      {siteTexts.pricing.priceInfo}
+                    </p>
                   </div>
                   
-                  <Button 
-                    variant="default" 
-                    size="xl" 
-                    className="w-full text-lg md:text-xl h-20 md:h-16 bg-primary text-primary-foreground hover:bg-primary/90 shadow-warm hover:shadow-xl transform hover:scale-105 transition-all duration-300 font-bold leading-tight py-3 px-4 whitespace-normal break-words"
-                    onClick={goToPayment}
-                  >
-                    🎯 {siteTexts.pricing.cta}
-                  </Button>
+<a
+  href="https://sun-mentoring.com/courses/english-activator/?add-to-cart=3348"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center justify-center gap-2 w-full text-lg md:text-xl h-20 md:h-16 bg-primary text-primary-foreground hover:bg-primary/90 shadow-warm hover:shadow-xl transform hover:scale-105 transition-all duration-300 font-bold leading-tight py-3 px-4 whitespace-normal break-words rounded-lg"
+>
+  🎯 {siteTexts.pricing.cta}
+</a>
                   
                   <p className="text-center text-sm text-card-foreground/70 mt-3">
                     {siteTexts.pricing.guarantee}

@@ -293,7 +293,7 @@ curriculum: {
   pricing: {
     title: "Zacznij dziś za",
     price: "47 PLN*",
-    priceInfo: "*Cena w PLN ma charakter informacyjny | Płatność realizowana jest w euro (12 EUR) | Ostateczna kwota w PLN zależy od kursu Twojego banku.",
+    priceInfo: "*Cena w PLN ma charakter informacyjny | Płatność realizowana jest w euro (11,5 EUR) | Ostateczna kwota w PLN zależy od kursu Twojego banku.",
     subtitle: "Zamiast płacić tysiące za długie kursy – zainwestuj w metodę, która działa",
     packageTitle: "Co dostajesz w pakiecie?",
     packageItems: [
@@ -343,7 +343,7 @@ curriculum: {
 },
 {
   question: "W jakiej walucie jest płatność?",
-  answer: "Płatność realizowana jest w euro (12 EUR). Cena w PLN (47 zł) ma charakter orientacyjny i może się nieznacznie różnić w zależności od kursu Twojego banku."
+  answer: "Płatność realizowana jest w euro (11,5 EUR). Cena w PLN (47 zł) ma charakter orientacyjny i może się nieznacznie różnić w zależności od kursu Twojego banku."
 },
 {
   question: "Co się dzieje po zakupie?",

@@ -203,7 +203,7 @@ curriculum: {
       breakthrough: "Teraz? Czuję się często o wiele bardziej swobodnie w języku angielskim niż w polskim. Ukończyłam studia licencjackie na jednej z lepszych uczelni w UK z pierwszą klasą z wyróżnieniem.",
       whyImportant: {
         title: "Dlaczego to takie ważne?",
-        problem: "Bo wiele moich kursantek mówiło mi, że uczyły się słówek i konstrukcji, których nikt za granicą nie używa — albo nawet nie rozumie. Ten problem pojawia się non stop w grupach dla Polek mieszkających w UK czy USA. Część nauczycieli i twórców kursów nigdy nie mieszkała w kraju anglojęzycznym, więc uczą angielskiego…książkowego. A ten znaczy różnie się od żywego, codziennego języka.",
+        problem: "Bo wiele moich kursantek mówiło mi, że uczyły się słówek i konstrukcji, których nikt za granicą nie używa — albo nawet nie rozumie. Ten problem pojawia się non stop w grupach dla Polek mieszkających w UK czy USA. Część nauczycieli i twórców kursów nigdy nie mieszkała w kraju anglojęzycznym, więc uczą angielskiego…książkowego. A ten znacznie różni się od żywego, codziennego języka.",
         image: "/src/assets/history1.png",
         imageAlt: "Różnice między angielskim książkowym a żywym",
         imagePlaceholderText: "Placeholder dla history1.png",
@@ -277,7 +277,7 @@ curriculum: {
         "Aktywatory są idealne dla dorosłych na poziomie od A1 do C1."
       ]
     },
-    summary: "Osoby na A0 też mogą z nich skorzystać — sama robiłam podobne rzeczy, kiedy uczyłam się hiszpańskiego od totalnego zera. Ale mówiąc wprost: na A0 będzie Ci trudniej. Nadal jest to możliwe, tylko potrzebujesz więcej czasu i wsparcia. Dlatego jeśli startujesz <strong>od absolutnego zera</strong>, lepszym początkiem będą <strong>zajęcia 1:1</strong>, a Aktywatory potraktuj jako późniejszy dodatek.",
+    summary: "Osoby na A0 też mogą z nich skorzystać — sama robiłam podobne rzeczy, kiedy uczyłam się hiszpańskiego od totalnego zera. Ale na A0 będzie Ci trudniej. Nadal jest to możliwe, tylko potrzebujesz więcej czasu i wsparcia. Dlatego jeśli startujesz <strong>od absolutnego zera</strong>, lepszym początkiem będą <strong>zajęcia 1:1</strong>, a Aktywatory potraktuj jako późniejszy dodatek.",
     notForWho: {
       title: "Dla kogo to NIE jest?",
       items: [

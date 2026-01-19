@@ -168,7 +168,7 @@ curriculum: {
       },
       {
         title: "Zestaw wspierających afirmacji wspomagających naukę języka PDF",
-        description: "Pozytywne afirmacje w formacie PDF i audio do wzmacniania motywacji, pewności siebie i łamania blokad mentalnych"
+        description: "Pozytywne afirmacje w formacie PDF do wzmacniania motywacji, pewności siebie i łamania blokad mentalnych"
       }
     ]
   },
